@@ -7,12 +7,13 @@ h1 {
     justify-content: center;
     display: flex;
     margin: 75px auto 75px auto;
-    width: 600px;
+    width: 650px;
 }
 
 .gameContainer {
-    width: 600px;    
+    width: 650px;    
     display: grid;
+    justify-content: center;
     background-color: black;
     grid-template-columns: auto auto auto auto auto auto auto;
     padding: 20px;
@@ -20,13 +21,18 @@ h1 {
 }
 
 .circle {
+    display: flex;
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
+    justify-content: center;
+    align-content: center;
     text-align: center;
     margin: 5px;
     border-radius: 50%;
+    height: auto;
+    /* width: 50px; */
     border: 1px solid green;
 }
 
@@ -66,3 +72,10 @@ img {
     color: black;
     padding: 10px;
 }
+
+/* .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center; 
+} */
