@@ -39,6 +39,7 @@ var columnSix = document.querySelectorAll('#rowSix')
 
 var entireGame = document.querySelectorAll('.circle')
 
+// Column One click function
 $('#a0').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[35].style.background != "red") {
@@ -58,6 +59,150 @@ $('#a0').click(function () {
         return
     } else if (entireGame[0].style.background != "red") {
         entireGame[0].style.background = "red"
+        return
+    }
+})
+
+// Column Two click function
+$('#a1').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[36].style.background != "red") {
+        entireGame[36].style.background = "red"
+        return
+    } else if (entireGame[29].style.background != "red") {
+        entireGame[29].style.background = "red"
+        return
+    } else if (entireGame[22].style.background != "red") {
+        entireGame[22].style.background = "red"
+        return
+    } else if (entireGame[15].style.background != "red") {
+        entireGame[15].style.background = "red"
+        return
+    } else if (entireGame[8].style.background != "red") {
+        entireGame[8].style.background = "red"
+        return
+    } else if (entireGame[1].style.background != "red") {
+        entireGame[1].style.background = "red"
+        return
+    }
+})
+
+// Column Three click function
+$('#a2').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[37].style.background != "red") {
+        entireGame[37].style.background = "red"
+        return
+    } else if (entireGame[30].style.background != "red") {
+        entireGame[30].style.background = "red"
+        return
+    } else if (entireGame[23].style.background != "red") {
+        entireGame[23].style.background = "red"
+        return
+    } else if (entireGame[16].style.background != "red") {
+        entireGame[16].style.background = "red"
+        return
+    } else if (entireGame[9].style.background != "red") {
+        entireGame[9].style.background = "red"
+        return
+    } else if (entireGame[2].style.background != "red") {
+        entireGame[2].style.background = "red"
+        return
+    }
+})
+
+// Column Four click function
+$('#a3').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[38].style.background != "red") {
+        entireGame[38].style.background = "red"
+        return
+    } else if (entireGame[31].style.background != "red") {
+        entireGame[31].style.background = "red"
+        return
+    } else if (entireGame[24].style.background != "red") {
+        entireGame[24].style.background = "red"
+        return
+    } else if (entireGame[17].style.background != "red") {
+        entireGame[17].style.background = "red"
+        return
+    } else if (entireGame[10].style.background != "red") {
+        entireGame[10].style.background = "red"
+        return
+    } else if (entireGame[3].style.background != "red") {
+        entireGame[3].style.background = "red"
+        return
+    }
+})
+
+// Column Five click function
+$('#a4').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[39].style.background != "red") {
+        entireGame[39].style.background = "red"
+        return
+    } else if (entireGame[32].style.background != "red") {
+        entireGame[32].style.background = "red"
+        return
+    } else if (entireGame[25].style.background != "red") {
+        entireGame[25].style.background = "red"
+        return
+    } else if (entireGame[18].style.background != "red") {
+        entireGame[18].style.background = "red"
+        return
+    } else if (entireGame[11].style.background != "red") {
+        entireGame[11].style.background = "red"
+        return
+    } else if (entireGame[4].style.background != "red") {
+        entireGame[4].style.background = "red"
+        return
+    }
+})
+
+// Column Six click function
+$('#a5').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[40].style.background != "red") {
+        entireGame[40].style.background = "red"
+        return
+    } else if (entireGame[33].style.background != "red") {
+        entireGame[33].style.background = "red"
+        return
+    } else if (entireGame[26].style.background != "red") {
+        entireGame[26].style.background = "red"
+        return
+    } else if (entireGame[19].style.background != "red") {
+        entireGame[19].style.background = "red"
+        return
+    } else if (entireGame[12].style.background != "red") {
+        entireGame[12].style.background = "red"
+        return
+    } else if (entireGame[5].style.background != "red") {
+        entireGame[5].style.background = "red"
+        return
+    }
+})
+
+// Column Seven click function
+$('#a6').click(function () {
+    // entireGame[5].style.background = "red"
+    if (entireGame[41].style.background != "red") {
+        entireGame[41].style.background = "red"
+        return
+    } else if (entireGame[34].style.background != "red") {
+        entireGame[34].style.background = "red"
+        return
+    } else if (entireGame[27].style.background != "red") {
+        entireGame[27].style.background = "red"
+        return
+    } else if (entireGame[20].style.background != "red") {
+        entireGame[20].style.background = "red"
+        return
+    } else if (entireGame[13].style.background != "red") {
+        entireGame[13].style.background = "red"
+        return
+    } else if (entireGame[6].style.background != "red") {
+        entireGame[6].style.background = "red"
         return
     }
 })
