@@ -6,17 +6,17 @@ h1 {
 .mainContainer {
     justify-content: center;
     display: flex;
-    margin: 100px auto 100px auto;
-    width: 40vw;
-    border: 5px solid green;
+    margin: 75px auto 75px auto;
+    width: 600px;
 }
 
 .gameContainer {
-    width: 40vw;    
+    width: 600px;    
     display: grid;
     background-color: black;
     grid-template-columns: auto auto auto auto auto auto auto;
     padding: 20px;
+    border: 5px solid green;
 }
 
 .circle {
@@ -33,7 +33,7 @@ h1 {
 img {
     width: 20%;
     height: auto;
-    display: inline-flex;
+    display: flex;
     margin: auto;
     border: 5px solid yellow;
 }
@@ -43,9 +43,9 @@ img {
 }
 
 .optionsContainer {
-    display: flex;
     justify-content: space-around;
     align-content: center;
+    display: none;
 }
 
 .mainButton {
