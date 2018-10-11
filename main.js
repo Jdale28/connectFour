@@ -59,35 +59,312 @@ var columnSix = document.querySelectorAll('#rowSix')
 
 
 var entireGame = document.querySelectorAll('.circle')
+var countTurns = 0
+
 
 // Loop from i to get to j0, make it red if not red
 // i[j][0] != red" make it red
 
 
 // Column One click function
+
 $('#0').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[35].style.background != "red") {
-        entireGame[35].style.background = "red"
-        // return
-    } else if (entireGame[28].style.background != "red") {
-        entireGame[28].style.background = "red"
-        // return
-    } else if (entireGame[21].style.background != "red") {
-        entireGame[21].style.background = "red"
-        // return
-    } else if (entireGame[14].style.background != "red") {
-        entireGame[14].style.background = "red"
-        // return
-    } else if (entireGame[7].style.background != "red") {
-        entireGame[7].style.background = "red"
-        // return
-    } else if (entireGame[0].style.background != "red") {
-        entireGame[0].style.background = "red"
-        // return
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
     }
-    chkWinColOne()  
-    return
+
+    while (entireGame[35].style.background === "") {
+        entireGame[35].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[28].style.background === "") {
+        entireGame[28].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[21].style.background === "") {
+        entireGame[21].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[14].style.background === "") {
+        entireGame[14].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[7].style.background === "") {
+        entireGame[7].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[0].style.background === "") {
+        entireGame[0].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Two click function - Done
+$('#1').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[36].style.background === "") {
+        entireGame[36].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[29].style.background === "") {
+        entireGame[29].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[22].style.background === "") {
+        entireGame[22].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[15].style.background === "") {
+        entireGame[15].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[8].style.background === "") {
+        entireGame[8].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[1].style.background === "") {
+        entireGame[1].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Three click function - Done
+$('#2').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[37].style.background === "") {
+        entireGame[37].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[30].style.background === "") {
+        entireGame[30].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[23].style.background === "") {
+        entireGame[23].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[16].style.background === "") {
+        entireGame[16].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[9].style.background === "") {
+        entireGame[9].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[2].style.background === "") {
+        entireGame[2].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Four click function - Done
+$('#3').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[38].style.background === "") {
+        entireGame[38].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[31].style.background === "") {
+        entireGame[31].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[24].style.background === "") {
+        entireGame[24].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[17].style.background === "") {
+        entireGame[17].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[10].style.background === "") {
+        entireGame[10].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[3].style.background === "") {
+        entireGame[3].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Five click function - Done
+$('#4').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[39].style.background === "") {
+        entireGame[39].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[32].style.background === "") {
+        entireGame[32].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[25].style.background === "") {
+        entireGame[25].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[18].style.background === "") {
+        entireGame[18].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[11].style.background === "") {
+        entireGame[11].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[4].style.background === "") {
+        entireGame[4].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Six click function - Done
+$('#5').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[40].style.background === "") {
+        entireGame[40].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[33].style.background === "") {
+        entireGame[33].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[26].style.background === "") {
+        entireGame[26].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[19].style.background === "") {
+        entireGame[19].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[12].style.background === "") {
+        entireGame[12].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[5].style.background === "") {
+        entireGame[5].style.background = color
+        countTurns++
+        return
+    }
+})
+
+
+// Column Seven click function - Done
+$('#6').click(function () {
+    let color = "red"
+    if (countTurns % 2 === 0){
+        color = "blue"
+    } else {
+        color
+    }
+
+    while (entireGame[41].style.background === "") {
+        entireGame[41].style.background = color
+        countTurns++
+        return
+    } 
+
+    while (entireGame[34].style.background === "") {
+        entireGame[34].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[27].style.background === "") {
+        entireGame[27].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[20].style.background === "") {
+        entireGame[20].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[13].style.background === "") {
+        entireGame[13].style.background = color
+        countTurns++
+        return
+    } 
+    while (entireGame[6].style.background === "") {
+        entireGame[6].style.background = color
+        countTurns++
+        return
+    }
 })
 
 // && (entireGame[21].style.background="red") && (entireGame[14].style.background="red"))
@@ -100,170 +377,3 @@ $('#0').click(function () {
 //         alert("You win!")
 //     }
 // }
-
-
-
-
-var countTurns = (-1)
-// Column Two click function
-$('#1').click(function () {
-    countTurns++
-    let color = "red"
-    if (countTurns % 2 === 0 || countTurns === 0){
-        color = "blue"
-    } else {
-        color
-    }
-    console.log(countTurns)
-    console.log(color)
-
-    if (countTurns === 0 || countTurns % 2 === 0 && entireGame[36].style.background != color) {
-        entireGame[36].style.background = color
-        console.log(countTurns)
-        return
-
-    } else if (entireGame[29].style.background != color || entireGame[29].style.background === "white") {
-        // First iteration = Checks to see if equal to current color (red) and because it's white, it makes it red
-        // Second iteration = Checks to see if equal to current color (blue) and because it's not blue (now red), it makes it blue
-        entireGame[29].style.background = color
-        console.log("Second Row")
-        return
-    } else if (entireGame[22].style.background != color || entireGame[22].style.background === "white") {
-        entireGame[22].style.background = color
-        console.log("Third Row")
-        return
-    } else if (countTurns % 2 === 0 && entireGame[15].style.background != color) {
-        entireGame[15].style.background = color
-        console.log(countTurns)
-        return
-    } else if (countTurns % 2 === 0 && entireGame[8].style.background != color) {
-        entireGame[8].style.background = color
-        console.log(countTurns)
-        return
-    } else if (countTurns % 2 === 0 && entireGame[1].style.background != color) {
-        entireGame[1].style.background = color
-        console.log(countTurns)
-        return
-    }
-
-})
-
-// Column Three click function
-$('#2').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[37].style.background != "red") {
-        entireGame[37].style.background = "red"
-        return
-    } else if (entireGame[30].style.background != "red") {
-        entireGame[30].style.background = "red"
-        return
-    } else if (entireGame[23].style.background != "red") {
-        entireGame[23].style.background = "red"
-        return
-    } else if (entireGame[16].style.background != "red") {
-        entireGame[16].style.background = "red"
-        return
-    } else if (entireGame[9].style.background != "red") {
-        entireGame[9].style.background = "red"
-        return
-    } else if (entireGame[2].style.background != "red") {
-        entireGame[2].style.background = "red"
-        return
-    }
-})
-
-// Column Four click function
-$('#3').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[38].style.background != "red") {
-        entireGame[38].style.background = "red"
-        return
-    } else if (entireGame[31].style.background != "red") {
-        entireGame[31].style.background = "red"
-        return
-    } else if (entireGame[24].style.background != "red") {
-        entireGame[24].style.background = "red"
-        return
-    } else if (entireGame[17].style.background != "red") {
-        entireGame[17].style.background = "red"
-        return
-    } else if (entireGame[10].style.background != "red") {
-        entireGame[10].style.background = "red"
-        return
-    } else if (entireGame[3].style.background != "red") {
-        entireGame[3].style.background = "red"
-        return
-    }
-})
-
-// Column Five click function
-$('#4').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[39].style.background != "red") {
-        entireGame[39].style.background = "red"
-        return
-    } else if (entireGame[32].style.background != "red") {
-        entireGame[32].style.background = "red"
-        return
-    } else if (entireGame[25].style.background != "red") {
-        entireGame[25].style.background = "red"
-        return
-    } else if (entireGame[18].style.background != "red") {
-        entireGame[18].style.background = "red"
-        return
-    } else if (entireGame[11].style.background != "red") {
-        entireGame[11].style.background = "red"
-        return
-    } else if (entireGame[4].style.background != "red") {
-        entireGame[4].style.background = "red"
-        return
-    }
-})
-
-// Column Six click function
-$('#5').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[40].style.background != "red") {
-        entireGame[40].style.background = "red"
-        return
-    } else if (entireGame[33].style.background != "red") {
-        entireGame[33].style.background = "red"
-        return
-    } else if (entireGame[26].style.background != "red") {
-        entireGame[26].style.background = "red"
-        return
-    } else if (entireGame[19].style.background != "red") {
-        entireGame[19].style.background = "red"
-        return
-    } else if (entireGame[12].style.background != "red") {
-        entireGame[12].style.background = "red"
-        return
-    } else if (entireGame[5].style.background != "red") {
-        entireGame[5].style.background = "red"
-        return
-    }
-})
-
-// Column Seven click function
-$('#6').click(function () {
-    // entireGame[5].style.background = "red"
-    if (entireGame[41].style.background != "red") {
-        entireGame[41].style.background = "red"
-        return
-    } else if (entireGame[34].style.background != "red") {
-        entireGame[34].style.background = "red"
-        return
-    } else if (entireGame[27].style.background != "red") {
-        entireGame[27].style.background = "red"
-        return
-    } else if (entireGame[20].style.background != "red") {
-        entireGame[20].style.background = "red"
-        return
-    } else if (entireGame[13].style.background != "red") {
-        entireGame[13].style.background = "red"
-        return
-    } else if (entireGame[6].style.background != "red") {
-        entireGame[6].style.background = "red"
-        return
-    }
-})
