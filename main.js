@@ -1,5 +1,3 @@
-let countTurns = 0
-
 var arr = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -10,7 +8,7 @@ var arr = [
 ]
 
 for (let i = 0; i < arr.length; i++){
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = 0; j < arr.length + 1; j++) {
         var div = document.createElement('div')
         // $('.gameContainer').append('div')
         // document.body.('div')
@@ -66,7 +64,7 @@ var entireGame = document.querySelectorAll('.circle')
 
 
 // Column One click function
-$('#a0').click(function () {
+$('#0').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[35].style.background != "red") {
         entireGame[35].style.background = "red"
@@ -92,46 +90,55 @@ $('#a0').click(function () {
 })
 
 // && (entireGame[21].style.background="red") && (entireGame[14].style.background="red"))
-var chkWinColOne = function () {
-    if (entireGame[35].style.background === "red" && entireGame[28].style.background === "red" && entireGame[21].style.background === "red") { 
-        alert("You win!")
-    } else if (entireGame[28].style.background==="red" && (entireGame[21].style.background==="red") && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red")) {
-        alert("You win!")
-    } else if (entireGame[21].style.background==="red" && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red") && (entireGame[0].style.background==="red")) {
-        alert("You win!")
-    }
+// var chkWinColOne = function () {
+//     if (entireGame[35].style.background === "red" && entireGame[28].style.background === "red" && entireGame[21].style.background === "red") { 
+//         alert("You win!")
+//     } else if (entireGame[28].style.background==="red" && (entireGame[21].style.background==="red") && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red")) {
+//         alert("You win!")
+//     } else if (entireGame[21].style.background==="red" && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red") && (entireGame[0].style.background==="red")) {
+//         alert("You win!")
+//     }
+// }
+
+
+let color = "red"
+var countTurns = 0
+if (countTurns % 2 === 0 || counts === 0){
+    color = "blue"
+    console.log("hello")
+} else {
+    color = "blue"
+    console.log("hello2")
 }
 
-
-
-
-
 // Column Two click function
-$('#a1').click(function () {
+$('#1').click(function () {
     // entireGame[5].style.background = "red"
-    if (entireGame[36].style.background != "red") {
-        entireGame[36].style.background = "red"
+    countTurns++
+    if (countTurns === 0 || countTurns % 2 === 0 && entireGame[36].style.background != color) {
+        entireGame[36].style.background = color
+        console.log("bye")
         return
-    } else if (entireGame[29].style.background != "red") {
-        entireGame[29].style.background = "red"
+    } else if (entireGame[29].style.background != color) {
+        entireGame[29].style.background = color
         return
-    } else if (entireGame[22].style.background != "red") {
-        entireGame[22].style.background = "red"
+    } else if (entireGame[22].style.background != color) {
+        entireGame[22].style.background = color
         return
-    } else if (entireGame[15].style.background != "red") {
-        entireGame[15].style.background = "red"
+    } else if (entireGame[15].style.background != color) {
+        entireGame[15].style.background = color
         return
-    } else if (entireGame[8].style.background != "red") {
-        entireGame[8].style.background = "red"
+    } else if (entireGame[8].style.background != color) {
+        entireGame[8].style.background = color
         return
-    } else if (entireGame[1].style.background != "red") {
-        entireGame[1].style.background = "red"
+    } else if (entireGame[1].style.background != color) {
+        entireGame[1].style.background = color
         return
     }
 })
 
 // Column Three click function
-$('#a2').click(function () {
+$('#2').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[37].style.background != "red") {
         entireGame[37].style.background = "red"
@@ -155,7 +162,7 @@ $('#a2').click(function () {
 })
 
 // Column Four click function
-$('#a3').click(function () {
+$('#3').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[38].style.background != "red") {
         entireGame[38].style.background = "red"
@@ -179,7 +186,7 @@ $('#a3').click(function () {
 })
 
 // Column Five click function
-$('#a4').click(function () {
+$('#4').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[39].style.background != "red") {
         entireGame[39].style.background = "red"
@@ -203,7 +210,7 @@ $('#a4').click(function () {
 })
 
 // Column Six click function
-$('#a5').click(function () {
+$('#5').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[40].style.background != "red") {
         entireGame[40].style.background = "red"
@@ -227,7 +234,7 @@ $('#a5').click(function () {
 })
 
 // Column Seven click function
-$('#a6').click(function () {
+$('#6').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[41].style.background != "red") {
         entireGame[41].style.background = "red"
