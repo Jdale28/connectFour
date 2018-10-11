@@ -17,8 +17,6 @@ for (let i = 0; i < arr.length; i++){
 }
 
 
-
-
 var buttons = document.querySelectorAll('h3')
 var clicked = false
 
@@ -48,26 +46,10 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
-
-var columnOne = document.querySelectorAll('.rowOne')
-// var colOneText = [columnOne[0].innerHTML, columnOne[1].innerHTML, columnOne[2].innerHTML, columnOne[3].innerHTML, columnOne[4].innerHTML, columnOne[5].innerHTML, columnOne[6].innerHTML]
-var columnTwo = document.querySelectorAll('#rowTwo')
-var columnThree = document.querySelectorAll('#rowThree')
-var columnFour = document.querySelectorAll('#rowFour')
-var columnFive = document.querySelectorAll('#rowFive')
-var columnSix = document.querySelectorAll('#rowSix')
-
-
 var entireGame = document.querySelectorAll('.circle')
 var countTurns = 0
 
-
-// Loop from i to get to j0, make it red if not red
-// i[j][0] != red" make it red
-
-
 // Column One click function
-
 $('#0').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -108,9 +90,7 @@ $('#0').click(function () {
         return
     }
 })
-
-
-// Column Two click function - Done
+// Column Two click function
 $('#1').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -151,9 +131,7 @@ $('#1').click(function () {
         return
     }
 })
-
-
-// Column Three click function - Done
+// Column Three click function
 $('#2').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -194,9 +172,7 @@ $('#2').click(function () {
         return
     }
 })
-
-
-// Column Four click function - Done
+// Column Four click function
 $('#3').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -237,9 +213,7 @@ $('#3').click(function () {
         return
     }
 })
-
-
-// Column Five click function - Done
+// Column Five click function
 $('#4').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -280,9 +254,7 @@ $('#4').click(function () {
         return
     }
 })
-
-
-// Column Six click function - Done
+// Column Six click function
 $('#5').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -323,9 +295,7 @@ $('#5').click(function () {
         return
     }
 })
-
-
-// Column Seven click function - Done
+// Column Seven click function
 $('#6').click(function () {
     let color = "red"
     if (countTurns % 2 === 0){
@@ -367,6 +337,7 @@ $('#6').click(function () {
     }
 })
 
+
 // && (entireGame[21].style.background="red") && (entireGame[14].style.background="red"))
 // var chkWinColOne = function () {
 //     if (entireGame[35].style.background === "red" && entireGame[28].style.background === "red" && entireGame[21].style.background === "red") { 
@@ -377,3 +348,10 @@ $('#6').click(function () {
 //         alert("You win!")
 //     }
 // }
+// var columnOne = document.querySelectorAll('.rowOne')
+// // var colOneText = [columnOne[0].innerHTML, columnOne[1].innerHTML, columnOne[2].innerHTML, columnOne[3].innerHTML, columnOne[4].innerHTML, columnOne[5].innerHTML, columnOne[6].innerHTML]
+// var columnTwo = document.querySelectorAll('#rowTwo')
+// var columnThree = document.querySelectorAll('#rowThree')
+// var columnFour = document.querySelectorAll('#rowFour')
+// var columnFive = document.querySelectorAll('#rowFive')
+// var columnSix = document.querySelectorAll('#rowSix')
