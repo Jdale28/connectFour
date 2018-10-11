@@ -10,8 +10,6 @@ var arr = [
 for (let i = 0; i < arr.length; i++){
     for (let j = 0; j < arr.length + 1; j++) {
         var div = document.createElement('div')
-        // $('.gameContainer').append('div')
-        // document.body.('div')
         div.setAttribute("id", j)
         div.classList.add("circle")
         document.getElementById("gameContainer").appendChild(div)
@@ -62,6 +60,9 @@ var columnSix = document.querySelectorAll('#rowSix')
 
 var entireGame = document.querySelectorAll('.circle')
 
+// Loop from i to get to j0, make it red if not red
+// i[j][0] != red" make it red
+
 
 // Column One click function
 $('#0').click(function () {
@@ -101,40 +102,50 @@ $('#0').click(function () {
 // }
 
 
-let color = "red"
-var countTurns = 0
-if (countTurns % 2 === 0 || counts === 0){
-    color = "blue"
-    console.log("hello")
-} else {
-    color = "blue"
-    console.log("hello2")
-}
 
+
+var countTurns = (-1)
 // Column Two click function
 $('#1').click(function () {
-    // entireGame[5].style.background = "red"
     countTurns++
+    let color = "red"
+    if (countTurns % 2 === 0 || countTurns === 0){
+        color = "blue"
+    } else {
+        color
+    }
+    console.log(countTurns)
+    console.log(color)
+
     if (countTurns === 0 || countTurns % 2 === 0 && entireGame[36].style.background != color) {
         entireGame[36].style.background = color
-        console.log("bye")
+        console.log(countTurns)
         return
-    } else if (entireGame[29].style.background != color) {
+
+    } else if (entireGame[29].style.background != color || entireGame[29].style.background === "white") {
+        // First iteration = Checks to see if equal to current color (red) and because it's white, it makes it red
+        // Second iteration = Checks to see if equal to current color (blue) and because it's not blue (now red), it makes it blue
         entireGame[29].style.background = color
+        console.log("Second Row")
         return
-    } else if (entireGame[22].style.background != color) {
+    } else if (entireGame[22].style.background != color || entireGame[22].style.background === "white") {
         entireGame[22].style.background = color
+        console.log("Third Row")
         return
-    } else if (entireGame[15].style.background != color) {
+    } else if (countTurns % 2 === 0 && entireGame[15].style.background != color) {
         entireGame[15].style.background = color
+        console.log(countTurns)
         return
-    } else if (entireGame[8].style.background != color) {
+    } else if (countTurns % 2 === 0 && entireGame[8].style.background != color) {
         entireGame[8].style.background = color
+        console.log(countTurns)
         return
-    } else if (entireGame[1].style.background != color) {
+    } else if (countTurns % 2 === 0 && entireGame[1].style.background != color) {
         entireGame[1].style.background = color
+        console.log(countTurns)
         return
     }
+
 })
 
 // Column Three click function
