@@ -10,7 +10,7 @@ h1 {
     width: 650px;
 }
 
-.gameContainer {
+#gameContainer {
     width: 650px;    
     display: grid;
     justify-content: center;

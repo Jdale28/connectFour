@@ -1,3 +1,28 @@
+let countTurns = 0
+
+var arr = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+]
+
+for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j < arr.length; j++) {
+        var div = document.createElement('div')
+        // $('.gameContainer').append('div')
+        // document.body.('div')
+        div.setAttribute("id", j)
+        div.classList.add("circle")
+        document.getElementById("gameContainer").appendChild(div)
+    }
+}
+
+
+
+
 var buttons = document.querySelectorAll('h3')
 var clicked = false
 
@@ -10,21 +35,21 @@ $('.mainButton').click(function () {
 // Change them from default to dark
 var clicks = 0
 $('#darkOrLightTheme').click(function () {
-    if (clicks == 0) {
+    if (clicks === 0 || clicks % 2 === 0) {
         document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Light Theme`
         document.body.style.background = "black"
         document.querySelector('h1').style.color = "blue"
-        document.querySelector('.gameContainer').style.border = "5px solid darkblue"
-        document.querySelector('.gameContainer').style.background = "grey"
+        document.querySelector('#gameContainer').style.border = "5px solid darkblue"
+        document.querySelector('#gameContainer').style.background = "grey"
         // Change back to light
     } else {
         document.body.style.background = "white"
         document.querySelector('h1').style.color = "black"
-        document.querySelector('.gameContainer').style.border = "5px solid green"
-        document.querySelector('.gameContainer').style.background = "black"
+        document.querySelector('#gameContainer').style.border = "5px solid green"
+        document.querySelector('#gameContainer').style.background = "black"
         document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
     }
-    ++clicks
+    clicks++
 })
 
 
@@ -39,29 +64,47 @@ var columnSix = document.querySelectorAll('#rowSix')
 
 var entireGame = document.querySelectorAll('.circle')
 
+
 // Column One click function
 $('#a0').click(function () {
     // entireGame[5].style.background = "red"
     if (entireGame[35].style.background != "red") {
         entireGame[35].style.background = "red"
-        return
+        // return
     } else if (entireGame[28].style.background != "red") {
         entireGame[28].style.background = "red"
-        return
+        // return
     } else if (entireGame[21].style.background != "red") {
         entireGame[21].style.background = "red"
-        return
+        // return
     } else if (entireGame[14].style.background != "red") {
         entireGame[14].style.background = "red"
-        return
+        // return
     } else if (entireGame[7].style.background != "red") {
         entireGame[7].style.background = "red"
-        return
+        // return
     } else if (entireGame[0].style.background != "red") {
         entireGame[0].style.background = "red"
-        return
+        // return
     }
+    chkWinColOne()  
+    return
 })
+
+// && (entireGame[21].style.background="red") && (entireGame[14].style.background="red"))
+var chkWinColOne = function () {
+    if (entireGame[35].style.background === "red" && entireGame[28].style.background === "red" && entireGame[21].style.background === "red") { 
+        alert("You win!")
+    } else if (entireGame[28].style.background==="red" && (entireGame[21].style.background==="red") && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red")) {
+        alert("You win!")
+    } else if (entireGame[21].style.background==="red" && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red") && (entireGame[0].style.background==="red")) {
+        alert("You win!")
+    }
+}
+
+
+
+
 
 // Column Two click function
 $('#a1').click(function () {
