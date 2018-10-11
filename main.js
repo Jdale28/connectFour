@@ -18,7 +18,6 @@ for (let i = 0; i < arr.length; i++){
     }
 }
 
-
 var buttons = document.querySelectorAll('h3')
 var clicked = false
 
@@ -28,7 +27,7 @@ $('.mainButton').click(function () {
     return (clicked ? document.querySelector('.optionsContainer').style.display = "flex" : document.querySelector('.optionsContainer').style.display = "none")
 })
 
-// Change them from default to dark
+// Change theme from default to dark
 var clicks = 0
 $('#darkOrLightTheme').click(function () {
     if (clicks === 0 || clicks % 2 === 0) {
@@ -63,7 +62,7 @@ $('#0').click(function () {
         color
         player = 1
     }
-
+    
     while (entireGame[35].style.background === "") {
         entireGame[35].style.background = color
         countTurns++
@@ -403,21 +402,35 @@ $('#6').click(function () {
     }
 })
 
+// Possible win locations
 
-// && (entireGame[21].style.background="red") && (entireGame[14].style.background="red"))
-// var chkWinColOne = function () {
-//     if (entireGame[35].style.background === "red" && entireGame[28].style.background === "red" && entireGame[21].style.background === "red") { 
-//         alert("You win!")
-//     } else if (entireGame[28].style.background==="red" && (entireGame[21].style.background==="red") && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red")) {
-//         alert("You win!")
-//     } else if (entireGame[21].style.background==="red" && (entireGame[14].style.background==="red") && (entireGame[7].style.background==="red") && (entireGame[0].style.background==="red")) {
-//         alert("You win!")
-//     }
-// }
-// var columnOne = document.querySelectorAll('.rowOne')
-// // var colOneText = [columnOne[0].innerHTML, columnOne[1].innerHTML, columnOne[2].innerHTML, columnOne[3].innerHTML, columnOne[4].innerHTML, columnOne[5].innerHTML, columnOne[6].innerHTML]
-// var columnTwo = document.querySelectorAll('#rowTwo')
-// var columnThree = document.querySelectorAll('#rowThree')
-// var columnFour = document.querySelectorAll('#rowFour')
-// var columnFive = document.querySelectorAll('#rowFive')
-// var columnSix = document.querySelectorAll('#rowSix')
+// var diagUpOne = [arr[0][2], arr[1][3], arr[2][4], arr[3][5]]
+// var diagUpTwo = [arr[0][1], arr[1][2], arr[2][3], arr[3][4], arr[4][5]]
+// var diagUpThree = [arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4], arr[5][5]]
+// var diagUpFour = [arr[1][0], arr[2][1], arr[3][2], arr[4][3], arr[5][4], arr[5][6]]
+// var diagUpFive = [arr[2][0], arr[3][1], arr[4][2], arr[5][3], arr[6][4]]
+// var diagUpSix = [arr[3][0], arr[4][1], arr[5][2], arr[6][3]]
+
+// var diagDownOne = [arr[0][3], arr[1][2], arr[2][1], arr[3][0]]
+// var diagDownTwo = [arr[0][4], arr[1][3], arr[2][2], arr[3][1], arr[4][0]]
+// var diagDownThree = [arr[0][5], arr[1][4], arr[2][3], arr[3][2], arr[4][1], arr[5][0]]
+// var diagDownFour = [arr[1][5], arr[2][4], arr[3][3], arr[4][2], arr[5][1], arr[6][0]]
+// var diagDownFive = [arr[2][5], arr[3][4], arr[4][3], arr[5][2], arr[6][1]]
+// var diagDownSix = [arr[3][5], arr[4][4], arr[5][3], arr[6][2]]
+
+
+// var rowOne = [arr[0][0], arr[0][1], arr[0][2], arr[0][3], arr[0][4], arr[0][5], arr[0][6]]
+// var rowTwo = [arr[1][0], arr[1][1], arr[1][2], arr[1][3], arr[1][4], arr[1][5], arr[1][6]]
+// var rowThree = [arr[2][0], arr[2][1], arr[2][2], arr[2][3], arr[2][4], arr[2][5], arr[2][6]]
+// var rowFour = [arr[3][0], arr[3][1], arr[3][2], arr[3][3], arr[3][4], arr[3][5], arr[3][6]]
+// var rowFive = [arr[4][0], arr[4][1], arr[4][2], arr[4][3], arr[4][4], arr[4][5], arr[4][6]]
+// var rowSix = [arr[5][0], arr[5][1], arr[5][2], arr[5][3], arr[5][4], arr[5][5], arr[5][6]]
+
+
+var colOne = [arr[0][0], arr[1][0], arr[2][0], arr[3][0], arr[4][0], arr[5][0]]
+// var colTwo = [arr[0][1], arr[1][1], arr[2][1], arr[3][1], arr[4][1], arr[5][1]]
+// var colThree = [arr[0][2], arr[1][2], arr[2][2], arr[3][2], arr[4][2], arr[5][2]]
+// var colFour = [arr[0][3], arr[1][3], arr[2][3], arr[3][3], arr[4][3], arr[5][3]]
+// var colFive = [arr[0][4], arr[1][4], arr[2][4], arr[3][4], arr[4][4], arr[5][4]]
+// var colSix = [arr[0][5], arr[1][5], arr[2][5], arr[3][5], arr[4][5], arr[5][5]]
+// var colSeven = [arr[0][6], arr[1][6], arr[2][6], arr[3][6], arr[4][6], arr[5][6]]    
