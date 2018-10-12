@@ -21,6 +21,14 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
+// Prompt for names upon load
+// $(document).ready ( function(){
+//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+//     document.querySelector("#playerOne").innerHTML = oneName
+//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+//     document.querySelector("#playerTwo").innerHTML = twoName
+//  })
+
 
 var buttons = document.querySelectorAll('h3')
 var clicked = false
@@ -50,18 +58,55 @@ $('#darkOrLightTheme').click(function () {
         document.querySelector('h1').style.color = "blue"
         document.querySelector('#gameContainer').style.border = "5px solid darkblue"
         document.querySelector('#gameContainer').style.background = "grey"
+        document.querySelector('.playerName').style.background = "black"
+        document.querySelector('#nameBox').style.color="white"
+        document.querySelector('#nameBox2').style.background="black"
+        document.querySelector('#nameBox2').style.color="white"
         // Change back to light
     } else {
         document.body.style.background = "white"
         document.querySelector('h1').style.color = "black"
         document.querySelector('#gameContainer').style.border = "5px solid green"
         document.querySelector('#gameContainer').style.background = "black"
+        document.querySelector('.playerName').style.background = "white"
+        document.querySelector('#nameBox').style.color="black"
+        document.querySelector('#nameBox2').style.background="white"
+        document.querySelector('#nameBox2').style.color="black"
         document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
     }
     clicks++
 })
 
+// Change theme from default to ogre - WIP
+$('#ogreOrNormalTheme').click(function () {
+    if (clicks === 0 || clicks % 2 === 0) {
+        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
+        document.body.style.background = "black"
+        document.querySelector('h1').style.color = "blue"
+        document.querySelector('#gameContainer').style.border = "5px solid darkblue"
+        document.querySelector('#gameContainer').style.background = "grey"
+        document.querySelector('.playerName').style.background = "black"
+        document.querySelector('#nameBox').style.color="white"
+        document.querySelector('#nameBox2').style.background="black"
+        document.querySelector('#nameBox2').style.color="white"
+        // Change back to normal
+    } else {
+        document.body.style.background = "white"
+        document.querySelector('h1').style.color = "black"
+        document.querySelector('#gameContainer').style.border = "5px solid green"
+        document.querySelector('#gameContainer').style.background = "black"
+        document.querySelector('.playerName').style.background = "white"
+        document.querySelector('#nameBox').style.color="black"
+        document.querySelector('#nameBox2').style.background="white"
+        document.querySelector('#nameBox2').style.color="black"
+        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
+    }
+    clicks++
+})
+
 // Checks directions for winners and results in player who won
+var winOneCount = 0
+var winTwoCount = 0
 var winCheck = function (num) {
 
     for (let i = 0; i < arr.length; i++) {
@@ -476,9 +521,19 @@ $('.6').click(function () {
     }
 })
 
+let scoreCount = 0
+
+function resetGame() {
+    scoreCount = 0
+    countTurns = 0
+    for (let i = 0; i < 42; i++) {
+            entireGame[i].style.background = ""
+    }
+}
+
 // Win function player one horizontal
 function p1horizontal (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 1 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
@@ -490,6 +545,11 @@ function p1horizontal (i, j){
                     setTimeout(function() {
                         alert(`Player One wins!`)
                     }, 1000)
+                    setTimeout(function(){
+                        resetGame()
+                    }, 3000)
+                    winOneCount++
+                    document.querySelector('#playerOneScore').innerHTML = winOneCount
                     return
                 } else {
                     scoreCount = 0
@@ -508,7 +568,7 @@ function p1horizontal (i, j){
 
 // Win function player two horizontal
 function p2horizontal (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 2 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
@@ -538,7 +598,7 @@ function p2horizontal (i, j){
 
 // Win function player one vertical
 function p1vertical (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 1 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i-1][j] === 1 && arr[i-1][j] != undefined) {
@@ -567,7 +627,7 @@ function p1vertical (i, j){
 
 // Win function player two vertical
 function p2vertical (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 2 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i-1][j] === 2 && arr[i-1][j] != undefined) {
@@ -596,7 +656,7 @@ function p2vertical (i, j){
 
 // Win function player one diagonal
 function p1diagonal (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 1 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i-1][j+1] === 1 && arr[i-1][j+1] != undefined) {
@@ -625,7 +685,7 @@ function p1diagonal (i, j){
 
 // Win function player one diagonal
 function p2diagonal (i, j){
-    let scoreCount = 0
+    // let scoreCount = 0
     if (arr[i][j] === 2 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i-1][j+1] === 2 && arr[i-1][j+1] != undefined) {

@@ -6,12 +6,13 @@ h1 {
 .mainContainer {
     justify-content: center;
     display: flex;
-    margin: 75px auto 75px auto;
-    width: 650px;
+    margin: 75px 0 75px 0;
+    height: 450px;
+    width: auto;
 }
 
 #gameContainer {
-    width: 650px;    
+    width: 600px;    
     display: grid;
     justify-content: center;
     background-color: black;
@@ -32,16 +33,28 @@ h1 {
     margin: 5px;
     border-radius: 50%;
     height: auto;
-    /* width: 50px; */
+    width: 23px;
     border: 1px solid green;
 }
 
-img {
-    width: 20%;
-    height: auto;
+.sidePanel {
+    /* border: 2px solid black; */
     display: flex;
-    margin: auto;
-    border: 5px solid yellow;
+    justify-content: center;
+    width: 25vw;
+
+}
+
+.playerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid yellow; */
+    width: 250px;
+    height: 60px;
+    font-size: 22px;
+    background-color: white;
+    color: black;
 }
 
 .navBar {
@@ -73,17 +86,19 @@ img {
     padding: 10px;
 }
 
-/* .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center; 
-} */
-
 .playerOne {
     background-color: red
 }
 
 .playerTwo {
     background-color: blue;
+}
+
+.scoreBox {
+    display: flex;
+    border: 2px solid yellow;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    height: 60px;
 }
