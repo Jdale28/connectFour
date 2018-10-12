@@ -21,8 +21,19 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
+
 var buttons = document.querySelectorAll('h3')
 var clicked = false
+
+let color = "red"
+
+if (countTurns % 2 === 0) {
+    color = "red"
+    player = 2
+} else {
+    color = "blue"
+    player = 1
+}
 
 // Ternary operator to switch display of sub buttons (Spencer helped out)
 $('.mainButton').click(function () {
@@ -50,8 +61,7 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
-var scoreCount = 0
-let player = 1
+
 var winCheck = function (num) {
 
     for (let i = 0; i < arr.length; i++) {
@@ -59,79 +69,11 @@ var winCheck = function (num) {
             if (arr[i][j] === 0) {
                 continue
             }
-            if (arr[i][j] === 1 && arr[i][j] != undefined) {
-                scoreCount += 1
-                console.log(scoreCount)
-                console.log("Hit One")
-
-                if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
-                    scoreCount += 1
-                    console.log(scoreCount)
-                    console.log("Hit Two")
-                    if (arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) {
-                        scoreCount += 1
-                        console.log(scoreCount)
-                        console.log("Hit Three")
-                        if (arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) {
-                            scoreCount += 1
-                            console.log(scoreCount)
-                            console.log("Hit Four")
-                            return
-                        } else {
-                            scoreCount = 0
-                        }
-                    } else {
-                        scoreCount = 0
-                    }
-                } else {
-                    scoreCount = 0
-                }
-            } else {
-                scoreCount = 0
-            }
+            p1horizontal(i, j)
+            p2horizontal(i, j)
         }
     }
-    console.log(scoreCount)
 }
-// var winCheck = function (num) {
-//     var scoreCount = 0
-//     for (let i = 0; i < arr.length; i++) {
-//         for (let j = 0; j < arr.length + 1; j++) {
-//             if (arr[i][j] === 0) {
-//                 continue
-//             }
-//             if (arr[i][j] === 1 && arr[i][j] != undefined) {
-//                 scoreCount += 1
-//                 console.log("Hit One")
-//                 if ((arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) ||
-//                     (arr[i + 1][j] === 1 && arr[i + 1][j] != undefined) ||
-//                     (arr[i + 1][j + 1] === 1 && arr[i + 1][j + 1] != undefined)) {
-//                     scoreCount += 1
-//                     console.log("Hit Two")
-//                     if ((arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) ||
-//                         (arr[i + 2][j] === 1 && arr[i + 2][j] != undefined) ||
-//                         (arr[i + 2][j + 2] === 1 && arr[i + 2][j + 2] != undefined)) {
-//                         scoreCount += 1
-//                         console.log("Hit Three")
-//                         if ((arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) ||
-//                             (arr[i + 3][j] === 1 && arr[i + 3][j] != undefined) ||
-//                             (arr[i + 3][j + 3] === 1 && arr[i + 3][j + 3] != undefined)) {
-//                             scoreCount += 1
-//                             console.log("Hit Four")
-//                         } else {
-//                             scoreCount = 0
-//                         }
-//                     } else {
-//                         scoreCount = 0
-//                     }
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             }
-//         }
-//     }
-//     console.log(scoreCount)
-// }
 
 // Functions that control clicking columns
 var entireGame = document.querySelectorAll('.circle')
@@ -143,18 +85,18 @@ $('.0').click(function () {
     let color = "red"
 
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[35].style.background === "") {
         entireGame[35].style.background = color
         countTurns++
         arr[5][0] = player
-        // winCheck(35)
+        winCheck()
         return
     }
 
@@ -162,49 +104,55 @@ $('.0').click(function () {
         entireGame[28].style.background = color
         countTurns++
         arr[4][0] = player
+        winCheck()
         return
     }
     while (entireGame[21].style.background === "") {
         entireGame[21].style.background = color
         countTurns++
         arr[3][0] = player
+        winCheck()
         return
     }
     while (entireGame[14].style.background === "") {
         entireGame[14].style.background = color
         countTurns++
         arr[2][0] = player
+        winCheck()
         return
     }
     while (entireGame[7].style.background === "") {
         entireGame[7].style.background = color
         countTurns++
         arr[1][0] = player
+        winCheck()
         return
     }
     while (entireGame[0].style.background === "") {
         entireGame[0].style.background = color
         countTurns++
         arr[0][0] = player
+        winCheck()
         return
     }
 })
 // Column Two click function - Done
 $('.1').click(function () {
     let color = "red"
-    let player = 1
+
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[36].style.background === "") {
         entireGame[36].style.background = color
         countTurns++
         arr[5][1] = player
+        winCheck()
         return
     }
 
@@ -212,49 +160,55 @@ $('.1').click(function () {
         entireGame[29].style.background = color
         countTurns++
         arr[4][1] = player
+        winCheck()
         return
     }
     while (entireGame[22].style.background === "") {
         entireGame[22].style.background = color
         countTurns++
         arr[3][1] = player
+        winCheck()
         return
     }
     while (entireGame[15].style.background === "") {
         entireGame[15].style.background = color
         countTurns++
         arr[2][1] = player
+        winCheck()
         return
     }
     while (entireGame[8].style.background === "") {
         entireGame[8].style.background = color
         countTurns++
         arr[1][1] = player
+        winCheck()
         return
     }
     while (entireGame[1].style.background === "") {
         entireGame[1].style.background = color
         countTurns++
         arr[0][1] = player
+        winCheck()
         return
     }
 })
 // Column Three click function - Done
 $('.2').click(function () {
     let color = "red"
-    let player = 1
+
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[37].style.background === "") {
         entireGame[37].style.background = color
         countTurns++
         arr[5][2] = player
+        winCheck()
         return
     }
 
@@ -262,49 +216,55 @@ $('.2').click(function () {
         entireGame[30].style.background = color
         countTurns++
         arr[4][2] = player
+        winCheck()
         return
     }
     while (entireGame[23].style.background === "") {
         entireGame[23].style.background = color
         countTurns++
         arr[3][2] = player
+        winCheck()
         return
     }
     while (entireGame[16].style.background === "") {
         entireGame[16].style.background = color
         countTurns++
         arr[2][2] = player
+        winCheck()
         return
     }
     while (entireGame[9].style.background === "") {
         entireGame[9].style.background = color
         countTurns++
         arr[1][2] = player
+        winCheck()
         return
     }
     while (entireGame[2].style.background === "") {
         entireGame[2].style.background = color
         countTurns++
         arr[0][2] = player
+        winCheck()
         return
     }
 })
 // Column Four click function - Done
 $('.3').click(function () {
     let color = "red"
-    let player = 1
+
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[38].style.background === "") {
         entireGame[38].style.background = color
         countTurns++
         arr[5][3] = player
+        winCheck()
         return
     }
 
@@ -312,49 +272,55 @@ $('.3').click(function () {
         entireGame[31].style.background = color
         countTurns++
         arr[4][3] = player
+        winCheck()
         return
     }
     while (entireGame[24].style.background === "") {
         entireGame[24].style.background = color
         countTurns++
         arr[3][3] = player
+        winCheck()
         return
     }
     while (entireGame[17].style.background === "") {
         entireGame[17].style.background = color
         countTurns++
         arr[2][3] = player
+        winCheck()
         return
     }
     while (entireGame[10].style.background === "") {
         entireGame[10].style.background = color
         countTurns++
         arr[1][3] = player
+        winCheck()
         return
     }
     while (entireGame[3].style.background === "") {
         entireGame[3].style.background = color
         countTurns++
         arr[0][3] = player
+        winCheck()
         return
     }
 })
 // Column Five click function
 $('.4').click(function () {
     let color = "red"
-    let player = 1
+
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[39].style.background === "") {
         entireGame[39].style.background = color
         countTurns++
         arr[5][4] = player
+        winCheck()
         return
     }
 
@@ -362,49 +328,55 @@ $('.4').click(function () {
         entireGame[32].style.background = color
         countTurns++
         arr[4][4] = player
+        winCheck()
         return
     }
     while (entireGame[25].style.background === "") {
         entireGame[25].style.background = color
         countTurns++
         arr[3][4] = player
+        winCheck()
         return
     }
     while (entireGame[18].style.background === "") {
         entireGame[18].style.background = color
         countTurns++
         arr[2][4] = player
+        winCheck()
         return
     }
     while (entireGame[11].style.background === "") {
         entireGame[11].style.background = color
         countTurns++
         arr[1][4] = player
+        winCheck()
         return
     }
     while (entireGame[4].style.background === "") {
         entireGame[4].style.background = color
         countTurns++
         arr[0][4] = player
+        winCheck()
         return
     }
 })
 // Column Six click function
 $('.5').click(function () {
     let color = "red"
-    let player = 1
+
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[40].style.background === "") {
         entireGame[40].style.background = color
         countTurns++
         arr[5][5] = player
+        winCheck()
         return
     }
 
@@ -412,49 +384,54 @@ $('.5').click(function () {
         entireGame[33].style.background = color
         countTurns++
         arr[4][5] = player
+        winCheck()
         return
     }
     while (entireGame[26].style.background === "") {
         entireGame[26].style.background = color
         countTurns++
         arr[3][5] = player
+        winCheck()
         return
     }
     while (entireGame[19].style.background === "") {
         entireGame[19].style.background = color
         countTurns++
         arr[2][5] = player
+        winCheck()
         return
     }
     while (entireGame[12].style.background === "") {
         entireGame[12].style.background = color
         countTurns++
         arr[1][5] = player
+        winCheck()
         return
     }
     while (entireGame[5].style.background === "") {
         entireGame[5].style.background = color
         countTurns++
         arr[0][5] = player
+        winCheck()
         return
     }
 })
 // Column Seven click function
 $('.6').click(function () {
     let color = "red"
-    let player = 1
     if (countTurns % 2 === 0) {
+        color = "red"
+        player = 1
+    } else {
         color = "blue"
         player = 2
-    } else {
-        color
-        player = 1
     }
 
     while (entireGame[41].style.background === "") {
         entireGame[41].style.background = color
         countTurns++
         arr[5][6] = player
+        winCheck()
         return
     }
 
@@ -462,30 +439,35 @@ $('.6').click(function () {
         entireGame[34].style.background = color
         countTurns++
         arr[4][6] = player
+        winCheck()
         return
     }
     while (entireGame[27].style.background === "") {
         entireGame[27].style.background = color
         countTurns++
         arr[3][6] = player
+        winCheck()
         return
     }
     while (entireGame[20].style.background === "") {
         entireGame[20].style.background = color
         countTurns++
         arr[2][6] = player
+        winCheck()
         return
     }
     while (entireGame[13].style.background === "") {
         entireGame[13].style.background = color
         countTurns++
         arr[1][6] = player
+        winCheck()
         return
     }
     while (entireGame[6].style.background === "") {
         entireGame[6].style.background = color
         countTurns++
         arr[0][6] = player
+        winCheck()
         return
     }
 })
@@ -522,3 +504,73 @@ var colOne = [arr[0][0], arr[1][0], arr[2][0], arr[3][0], arr[4][0], arr[5][0]]
 // var colFive = [arr[0][4], arr[1][4], arr[2][4], arr[3][4], arr[4][4], arr[5][4]]
 // var colSix = [arr[0][5], arr[1][5], arr[2][5], arr[3][5], arr[4][5], arr[5][5]]
 // var colSeven = [arr[0][6], arr[1][6], arr[2][6], arr[3][6], arr[4][6], arr[5][6]]
+
+function p1horizontal (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 1 && arr[i][j] != undefined) {
+        scoreCount += 1
+        console.log(scoreCount)
+        console.log("Hit One")
+
+        if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
+            scoreCount += 1
+            console.log(scoreCount)
+            console.log("Hit Two")
+            if (arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) {
+                scoreCount += 1
+                console.log(scoreCount)
+                console.log("Hit Three")
+                if (arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) {
+                    scoreCount += 1
+                    console.log(scoreCount)
+                    console.log("Hit Four")
+                    alert(`Player One wins!`)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+
+function p2horizontal (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        console.log(scoreCount)
+        console.log("Hit One")
+
+        if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
+            scoreCount += 1
+            console.log(scoreCount)
+            console.log("Hit Two")
+            if (arr[i][j + 2] === 2 && arr[i][j + 2] != undefined) {
+                scoreCount += 1
+                console.log(scoreCount)
+                console.log("Hit Three")
+                if (arr[i][j + 3] === 2 && arr[i][j + 3] != undefined) {
+                    scoreCount += 1
+                    console.log(scoreCount)
+                    console.log("Hit Four")
+                    alert(`Player Two wins!`)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
