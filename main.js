@@ -22,12 +22,12 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // Prompt for names upon load
-// $(document).ready ( function(){
-//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-//     document.querySelector("#playerOne").innerHTML = oneName
-//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-//     document.querySelector("#playerTwo").innerHTML = twoName
-//  })
+$(document).ready ( function(){
+    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+    document.querySelector("#playerOne").innerHTML = oneName
+    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+    document.querySelector("#playerTwo").innerHTML = twoName
+ })
 
 
 var buttons = document.querySelectorAll('h3')
@@ -119,11 +119,11 @@ var winCheck = function (num) {
                 continue
             }
             p1horizontal(i, j)
-            // p2horizontal(i, j)
-            // p1vertical(i, j)
-            // p2vertical(i, j)
-            // p1diagonal(i, j)
-            // p2diagonal(i, j)
+            p2horizontal(i, j)
+            p1vertical(i, j)
+            p2vertical(i, j)
+            p1diagonal(i, j)
+            p2diagonal(i, j)
         }
     }
 }
@@ -542,7 +542,6 @@ function resetGame() {
 
 // Win function player one horizontal
 function p1horizontal (i, j){
-    // let scoreCount = 0
     if (arr[i][j] === 1 && arr[i][j] != undefined) {
         scoreCount += 1
         if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
@@ -569,151 +568,154 @@ function p1horizontal (i, j){
     } else {
         scoreCount = 0
     }
-    // console.log(scoreCount)
 }
 
 // // Win function player two horizontal
-// function p2horizontal (i, j){
-//     // let scoreCount = 0
-//     if (arr[i][j] === 2 && arr[i][j] != undefined) {
-//         scoreCount += 1
-//         if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
-//             scoreCount += 1
-//             if (arr[i][j + 2] === 2 && arr[i][j + 2] != undefined) {
-//                 scoreCount += 1
-//                 if (arr[i][j + 3] === 2 && arr[i][j + 3] != undefined) {
-//                     scoreCount += 1
-//                     setTimeout(function() {
-//                         alert(`Player One wins!`)
-//                     }, 1000)
-//                     return
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             } else {
-//                 scoreCount = 0
-//             }
-//         } else {
-//             scoreCount = 0
-//         }
-//     } else {
-//         scoreCount = 0
-//     }
-//     // console.log(scoreCount)
-// }
+function p2horizontal (i, j){
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
+            scoreCount += 1
+            if (arr[i][j + 2] === 2 && arr[i][j + 2] != undefined) {
+                scoreCount += 1
+                if (arr[i][j + 3] === 2 && arr[i][j + 3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player Two wins!`)
+                    }, 1000)
+                    winTwoCount++
+                    document.querySelector('#playerTwoScore').innerHTML = winTwoCount
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
 
-// // Win function player one vertical
-// function p1vertical (i, j){
-//     // let scoreCount = 0
-//     if (arr[i][j] === 1 && arr[i][j] != undefined) {
-//         scoreCount += 1
-//         if (arr[i-1][j] === 1 && arr[i-1][j] != undefined) {
-//             scoreCount += 1
-//             if (arr[i-2][j] === 1 && arr[i-2][j] != undefined) {
-//                  scoreCount += 1
-//                 if (arr[i-3][j] === 1 && arr[i-3][j] != undefined) {
-//                     scoreCount += 1
-//                     setTimeout(function() {
-//                         alert(`Player One wins!`)
-//                     }, 1000)
-//                     return
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             } else {
-//                 scoreCount = 0
-//             }
-//         } else {
-//             scoreCount = 0
-//         }
-//     } else {
-//         scoreCount = 0
-//     }
-// }
+// Win function player one vertical
+function p1vertical (i, j){
+    if (arr[i][j] === 1 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j] === 1 && arr[i-1][j] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j] === 1 && arr[i-2][j] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j] === 1 && arr[i-3][j] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
+                    winOneCount++
+                    document.querySelector('#playerOneScore').innerHTML = winOneCount
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
 
 // // Win function player two vertical
-// function p2vertical (i, j){
-//     // let scoreCount = 0
-//     if (arr[i][j] === 2 && arr[i][j] != undefined) {
-//         scoreCount += 1
-//         if (arr[i-1][j] === 2 && arr[i-1][j] != undefined) {
-//             scoreCount += 1
-//             if (arr[i-2][j] === 2 && arr[i-2][j] != undefined) {
-//                  scoreCount += 1
-//                 if (arr[i-3][j] === 2 && arr[i-3][j] != undefined) {
-//                     scoreCount += 1
-//                     setTimeout(function() {
-//                         alert(`Player Two wins!`)
-//                     }, 1000)
-//                     return
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             } else {
-//                 scoreCount = 0
-//             }
-//         } else {
-//             scoreCount = 0
-//         }
-//     } else {
-//         scoreCount = 0
-//     }
-// }
+function p2vertical (i, j){
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j] === 2 && arr[i-1][j] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j] === 2 && arr[i-2][j] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j] === 2 && arr[i-3][j] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player Two wins!`)
+                    }, 1000)
+                    winTwoCount++
+                    document.querySelector('#playerTwoScore').innerHTML = winTwoCount
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
 
 // // Win function player one diagonal
-// function p1diagonal (i, j){
-//     // let scoreCount = 0
-//     if (arr[i][j] === 1 && arr[i][j] != undefined) {
-//         scoreCount += 1
-//         if (arr[i-1][j+1] === 1 && arr[i-1][j+1] != undefined) {
-//             scoreCount += 1
-//             if (arr[i-2][j+2] === 1 && arr[i-2][j+2] != undefined) {
-//                  scoreCount += 1
-//                 if (arr[i-3][j+3] === 1 && arr[i-3][j+3] != undefined) {
-//                     scoreCount += 1
-//                     setTimeout(function() {
-//                         alert(`Player One wins!`)
-//                     }, 1000)
-//                     return
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             } else {
-//                 scoreCount = 0
-//             }
-//         } else {
-//             scoreCount = 0
-//         }
-//     } else {
-//         scoreCount = 0
-//     }
-// }
+function p1diagonal (i, j){
+    if (arr[i][j] === 1 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j+1] === 1 && arr[i-1][j+1] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j+2] === 1 && arr[i-2][j+2] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j+3] === 1 && arr[i-3][j+3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
+                    winOneCount++
+                    document.querySelector('#playerOneScore').innerHTML = winOneCount
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
 
-// // Win function player one diagonal
-// function p2diagonal (i, j){
-//     // let scoreCount = 0
-//     if (arr[i][j] === 2 && arr[i][j] != undefined) {
-//         scoreCount += 1
-//         if (arr[i-1][j+1] === 2 && arr[i-1][j+1] != undefined) {
-//             scoreCount += 1
-//             if (arr[i-2][j+2] === 2 && arr[i-2][j+2] != undefined) {
-//                  scoreCount += 1
-//                 if (arr[i-3][j+3] === 2 && arr[i-3][j+3] != undefined) {
-//                     scoreCount += 1
-//                     setTimeout(function() {
-//                         alert(`Player Two wins!`)
-//                     }, 1000)
-//                     return
-//                 } else {
-//                     scoreCount = 0
-//                 }
-//             } else {
-//                 scoreCount = 0
-//             }
-//         } else {
-//             scoreCount = 0
-//         }
-//     } else {
-//         scoreCount = 0
-//     }
-// }
+// // Win function player two diagonal
+function p2diagonal (i, j){
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j+1] === 2 && arr[i-1][j+1] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j+2] === 2 && arr[i-2][j+2] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j+3] === 2 && arr[i-3][j+3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player Two wins!`)
+                    }, 1000)
+                    winTwoCount++
+                    document.querySelector('#playerTwoScore').innerHTML = winTwoCount
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
