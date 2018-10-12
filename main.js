@@ -50,32 +50,33 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
+var scoreCount = 0
 let player = 1
 var winCheck = function (num) {
-    var scoreCount = 0
+
     for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length + 1; j++) {
+        for (let j = 0; j < arr.length; j++) {
             if (arr[i][j] === 0) {
                 continue
             }
             if (arr[i][j] === 1 && arr[i][j] != undefined) {
                 scoreCount += 1
+                console.log(scoreCount)
                 console.log("Hit One")
-                if ((arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) ||
-                    (arr[i + 1][j] === 1 && arr[i + 1][j] != undefined) ||
-                    (arr[i + 1][j + 1] === 1 && arr[i + 1][j + 1] != undefined)) {
+
+                if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
                     scoreCount += 1
+                    console.log(scoreCount)
                     console.log("Hit Two")
-                    if ((arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) ||
-                        (arr[i + 2][j] === 1 && arr[i + 2][j] != undefined) ||
-                        (arr[i + 2][j + 2] === 1 && arr[i + 2][j + 2] != undefined)) {
+                    if (arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) {
                         scoreCount += 1
+                        console.log(scoreCount)
                         console.log("Hit Three")
-                        if ((arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) ||
-                            (arr[i + 3][j] === 1 && arr[i + 3][j] != undefined) ||
-                            (arr[i + 3][j + 3] === 1 && arr[i + 3][j + 3] != undefined)) {
+                        if (arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) {
                             scoreCount += 1
+                            console.log(scoreCount)
                             console.log("Hit Four")
+                            return
                         } else {
                             scoreCount = 0
                         }
@@ -85,11 +86,52 @@ var winCheck = function (num) {
                 } else {
                     scoreCount = 0
                 }
+            } else {
+                scoreCount = 0
             }
         }
     }
     console.log(scoreCount)
 }
+// var winCheck = function (num) {
+//     var scoreCount = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length + 1; j++) {
+//             if (arr[i][j] === 0) {
+//                 continue
+//             }
+//             if (arr[i][j] === 1 && arr[i][j] != undefined) {
+//                 scoreCount += 1
+//                 console.log("Hit One")
+//                 if ((arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) ||
+//                     (arr[i + 1][j] === 1 && arr[i + 1][j] != undefined) ||
+//                     (arr[i + 1][j + 1] === 1 && arr[i + 1][j + 1] != undefined)) {
+//                     scoreCount += 1
+//                     console.log("Hit Two")
+//                     if ((arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) ||
+//                         (arr[i + 2][j] === 1 && arr[i + 2][j] != undefined) ||
+//                         (arr[i + 2][j + 2] === 1 && arr[i + 2][j + 2] != undefined)) {
+//                         scoreCount += 1
+//                         console.log("Hit Three")
+//                         if ((arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) ||
+//                             (arr[i + 3][j] === 1 && arr[i + 3][j] != undefined) ||
+//                             (arr[i + 3][j + 3] === 1 && arr[i + 3][j + 3] != undefined)) {
+//                             scoreCount += 1
+//                             console.log("Hit Four")
+//                         } else {
+//                             scoreCount = 0
+//                         }
+//                     } else {
+//                         scoreCount = 0
+//                     }
+//                 } else {
+//                     scoreCount = 0
+//                 }
+//             }
+//         }
+//     }
+//     console.log(scoreCount)
+// }
 
 // Functions that control clicking columns
 var entireGame = document.querySelectorAll('.circle')
@@ -97,6 +139,7 @@ var countTurns = 0
 
 // Column One click function
 $('.0').click(function () {
+    // winCheck()
     let color = "red"
 
     if (countTurns % 2 === 0) {
