@@ -61,7 +61,7 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
-
+// Checks directions for winners and results in player who won
 var winCheck = function (num) {
 
     for (let i = 0; i < arr.length; i++) {
@@ -71,6 +71,10 @@ var winCheck = function (num) {
             }
             p1horizontal(i, j)
             p2horizontal(i, j)
+            p1vertical(i, j)
+            p2vertical(i, j)
+            p1diagonal(i, j)
+            p2diagonal(i, j)
         }
     }
 }
@@ -136,7 +140,7 @@ $('.0').click(function () {
         return
     }
 })
-// Column Two click function - Done
+// Column Two click function
 $('.1').click(function () {
     let color = "red"
 
@@ -192,7 +196,7 @@ $('.1').click(function () {
         return
     }
 })
-// Column Three click function - Done
+// Column Three click function
 $('.2').click(function () {
     let color = "red"
 
@@ -248,7 +252,7 @@ $('.2').click(function () {
         return
     }
 })
-// Column Four click function - Done
+// Column Four click function
 $('.3').click(function () {
     let color = "red"
 
@@ -472,59 +476,80 @@ $('.6').click(function () {
     }
 })
 
-// Possible win locations
-
-// var diagUpOne = [arr[0][2], arr[1][3], arr[2][4], arr[3][5]]
-// var diagUpTwo = [arr[0][1], arr[1][2], arr[2][3], arr[3][4], arr[4][5]]
-// var diagUpThree = [arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4], arr[5][5]]
-// var diagUpFour = [arr[1][0], arr[2][1], arr[3][2], arr[4][3], arr[5][4], arr[5][6]]
-// var diagUpFive = [arr[2][0], arr[3][1], arr[4][2], arr[5][3], arr[6][4]]
-// var diagUpSix = [arr[3][0], arr[4][1], arr[5][2], arr[6][3]]
-
-// var diagDownOne = [arr[0][3], arr[1][2], arr[2][1], arr[3][0]]
-// var diagDownTwo = [arr[0][4], arr[1][3], arr[2][2], arr[3][1], arr[4][0]]
-// var diagDownThree = [arr[0][5], arr[1][4], arr[2][3], arr[3][2], arr[4][1], arr[5][0]]
-// var diagDownFour = [arr[1][5], arr[2][4], arr[3][3], arr[4][2], arr[5][1], arr[6][0]]
-// var diagDownFive = [arr[2][5], arr[3][4], arr[4][3], arr[5][2], arr[6][1]]
-// var diagDownSix = [arr[3][5], arr[4][4], arr[5][3], arr[6][2]]
-
-
-// var rowOne = [arr[0][0], arr[0][1], arr[0][2], arr[0][3], arr[0][4], arr[0][5], arr[0][6]]
-// var rowTwo = [arr[1][0], arr[1][1], arr[1][2], arr[1][3], arr[1][4], arr[1][5], arr[1][6]]
-// var rowThree = [arr[2][0], arr[2][1], arr[2][2], arr[2][3], arr[2][4], arr[2][5], arr[2][6]]
-// var rowFour = [arr[3][0], arr[3][1], arr[3][2], arr[3][3], arr[3][4], arr[3][5], arr[3][6]]
-// var rowFive = [arr[4][0], arr[4][1], arr[4][2], arr[4][3], arr[4][4], arr[4][5], arr[4][6]]
-// var rowSix = [arr[5][0], arr[5][1], arr[5][2], arr[5][3], arr[5][4], arr[5][5], arr[5][6]]
-
-
-var colOne = [arr[0][0], arr[1][0], arr[2][0], arr[3][0], arr[4][0], arr[5][0]]
-// var colTwo = [arr[0][1], arr[1][1], arr[2][1], arr[3][1], arr[4][1], arr[5][1]]
-// var colThree = [arr[0][2], arr[1][2], arr[2][2], arr[3][2], arr[4][2], arr[5][2]]
-// var colFour = [arr[0][3], arr[1][3], arr[2][3], arr[3][3], arr[4][3], arr[5][3]]
-// var colFive = [arr[0][4], arr[1][4], arr[2][4], arr[3][4], arr[4][4], arr[5][4]]
-// var colSix = [arr[0][5], arr[1][5], arr[2][5], arr[3][5], arr[4][5], arr[5][5]]
-// var colSeven = [arr[0][6], arr[1][6], arr[2][6], arr[3][6], arr[4][6], arr[5][6]]
-
+// Win function player one horizontal
 function p1horizontal (i, j){
     let scoreCount = 0
     if (arr[i][j] === 1 && arr[i][j] != undefined) {
         scoreCount += 1
-        console.log(scoreCount)
-        console.log("Hit One")
-
         if (arr[i][j + 1] === 1 && arr[i][j + 1] != undefined) {
             scoreCount += 1
-            console.log(scoreCount)
-            console.log("Hit Two")
             if (arr[i][j + 2] === 1 && arr[i][j + 2] != undefined) {
                 scoreCount += 1
-                console.log(scoreCount)
-                console.log("Hit Three")
                 if (arr[i][j + 3] === 1 && arr[i][j + 3] != undefined) {
                     scoreCount += 1
-                    console.log(scoreCount)
-                    console.log("Hit Four")
-                    alert(`Player One wins!`)
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+    // console.log(scoreCount)
+}
+
+// Win function player two horizontal
+function p2horizontal (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
+            scoreCount += 1
+            if (arr[i][j + 2] === 2 && arr[i][j + 2] != undefined) {
+                scoreCount += 1
+                if (arr[i][j + 3] === 2 && arr[i][j + 3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+    // console.log(scoreCount)
+}
+
+// Win function player one vertical
+function p1vertical (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 1 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j] === 1 && arr[i-1][j] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j] === 1 && arr[i-2][j] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j] === 1 && arr[i-3][j] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
                     return
                 } else {
                     scoreCount = 0
@@ -540,26 +565,78 @@ function p1horizontal (i, j){
     }
 }
 
-function p2horizontal (i, j){
+// Win function player two vertical
+function p2vertical (i, j){
     let scoreCount = 0
     if (arr[i][j] === 2 && arr[i][j] != undefined) {
         scoreCount += 1
-        console.log(scoreCount)
-        console.log("Hit One")
-
-        if (arr[i][j + 1] === 2 && arr[i][j + 1] != undefined) {
+        if (arr[i-1][j] === 2 && arr[i-1][j] != undefined) {
             scoreCount += 1
-            console.log(scoreCount)
-            console.log("Hit Two")
-            if (arr[i][j + 2] === 2 && arr[i][j + 2] != undefined) {
-                scoreCount += 1
-                console.log(scoreCount)
-                console.log("Hit Three")
-                if (arr[i][j + 3] === 2 && arr[i][j + 3] != undefined) {
+            if (arr[i-2][j] === 2 && arr[i-2][j] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j] === 2 && arr[i-3][j] != undefined) {
                     scoreCount += 1
-                    console.log(scoreCount)
-                    console.log("Hit Four")
-                    alert(`Player Two wins!`)
+                    setTimeout(function() {
+                        alert(`Player Two wins!`)
+                    }, 1000)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+
+// Win function player one diagonal
+function p1diagonal (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 1 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j+1] === 1 && arr[i-1][j+1] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j+2] === 1 && arr[i-2][j+2] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j+3] === 1 && arr[i-3][j+3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player One wins!`)
+                    }, 1000)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+
+// Win function player one diagonal
+function p2diagonal (i, j){
+    let scoreCount = 0
+    if (arr[i][j] === 2 && arr[i][j] != undefined) {
+        scoreCount += 1
+        if (arr[i-1][j+1] === 2 && arr[i-1][j+1] != undefined) {
+            scoreCount += 1
+            if (arr[i-2][j+2] === 2 && arr[i-2][j+2] != undefined) {
+                 scoreCount += 1
+                if (arr[i-3][j+3] === 2 && arr[i-3][j+3] != undefined) {
+                    scoreCount += 1
+                    setTimeout(function() {
+                        alert(`Player Two wins!`)
+                    }, 1000)
                     return
                 } else {
                     scoreCount = 0
