@@ -86,12 +86,12 @@ h1 {
     padding: 10px;
 }
 
-.playerOne {
-    background-color: red
+.playerOneOgre {
+    background-image: url("GnomeFemale.jpg")
 }
 
-.playerTwo {
-    background-color: blue;
+.playerTwoOgre {
+    background-image: url("GnomeMale.jpg")
 }
 
 .scoreBox {
