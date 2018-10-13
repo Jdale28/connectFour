@@ -100,5 +100,8 @@ h1 {
     text-align: center;
     justify-content: center;
     align-content: center;
+    padding: 10px;
     height: 60px;
+    width: 30px;
+    font-size: 30px;
 }
