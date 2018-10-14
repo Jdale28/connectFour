@@ -24,12 +24,12 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // // Prompt for names upon load
-// $(document).ready ( function(){
-//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-//     document.querySelector("#playerOne").innerHTML = oneName
-//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-//     document.querySelector("#playerTwo").innerHTML = twoName
-//  })
+$(document).ready ( function(){
+    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+    document.querySelector("#playerOne").innerHTML = oneName
+    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+    document.querySelector("#playerTwo").innerHTML = twoName
+ })
 
 
 var buttons = document.querySelectorAll('h3')
@@ -83,6 +83,8 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
+var ogreMode = false
+
 // Change theme from default to ogre - WIP
 $('#ogreOrNormalTheme').click(function () {
     if (clicks === 0 || clicks % 2 === 0) {
@@ -95,6 +97,7 @@ $('#ogreOrNormalTheme').click(function () {
         document.querySelector('#nameBox').style.color = "white"
         document.querySelector('#nameBox2').style.background = "black"
         document.querySelector('#nameBox2').style.color = "white"
+        ogreMode = true
         // playOneBackground = 
         // playTwoBackground = "green"
         // Change back to normal
@@ -108,6 +111,7 @@ $('#ogreOrNormalTheme').click(function () {
         document.querySelector('#nameBox2').style.background = "white"
         document.querySelector('#nameBox2').style.color = "black"
         document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
+        ogreMode = false
     }
     clicks++
 })
@@ -147,11 +151,20 @@ function setPlayer() {
     }
 }
 
+
+
 function setColor(cell, currI, currJ) {
     if (entireGame[cell].style.background === "") {
-        // entireGame[cell].style.background = color
-        entireGame[cell].style.backgroundImage = "url('GnomeMale.jpg')"
-        entireGame[cell].style.backgroundSize = "60px"
+        entireGame[cell].style.background = color
+        if (ogreMode) {
+            if (player === 1) {
+                entireGame[cell].style.backgroundImage = "url('GnomeMale.jpg')"
+                entireGame[cell].style.backgroundSize = "60px"
+            } else {
+                entireGame[cell].style.backgroundImage = "url('GnomeFemale.jpg')"
+                entireGame[cell].style.backgroundSize = "60px"
+            }
+        }
         countTurns++
         arr[currI][currJ] = player
         winCheck()
