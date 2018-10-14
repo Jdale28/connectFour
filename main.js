@@ -24,12 +24,12 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // // Prompt for names upon load
-$(document).ready ( function(){
-    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-    document.querySelector("#playerOne").innerHTML = oneName
-    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-    document.querySelector("#playerTwo").innerHTML = twoName
- })
+// $(document).ready ( function(){
+//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+//     document.querySelector("#playerOne").innerHTML = oneName
+//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+//     document.querySelector("#playerTwo").innerHTML = twoName
+//  })
 
 
 var buttons = document.querySelectorAll('h3')
