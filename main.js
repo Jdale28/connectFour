@@ -503,7 +503,7 @@ $('#politicalOrNormalTheme').click(function () {
 function trumpWins() {
     if (politicalMode && player === 1) {
         swal({
-            title: `Trump finally made 'Murica "Great Again"`,
+            title: `Trump made 'Murica "Great Again"`,
             text: "He also changed the Constitution so he's president forever",
             icon: "images/northAmerica.jpg",
             button: "Well... Shit."
