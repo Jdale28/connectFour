@@ -1,3 +1,7 @@
+// Variable to control whether or not a round has ended
+var isEnded = false
+
+// Variables and functions to create table
 var arr = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -6,12 +10,7 @@ var arr = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
 ]
-
-var isEnded = false
-
 var idMaker = 0
-console.table(arr)
-
 for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length + 1; j++) {
         var div = document.createElement('div')
@@ -23,123 +22,13 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
-// Prompt for names upon load
-$(document).ready ( function(){
-    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-    document.querySelector("#playerOne").innerHTML = oneName
-    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-    document.querySelector("#playerTwo").innerHTML = twoName
- })
-
-
-var buttons = document.querySelectorAll('h3')
-var clicked = false
-
-let color = "red"
-var player = 0
-if (countTurns % 2 === 0) {
-    color = "red"
-    player = 2
-} else {
-    color = "blue"
-    player = 1
-}
-
-// Ternary operator to switch display of sub buttons (Spencer helped out)
-$('.mainButton').click(function () {
-    clicked = !clicked
-    return (clicked ? document.querySelector('.optionsContainer').style.display = "flex" : document.querySelector('.optionsContainer').style.display = "none")
-})
-
-$('#resetButton').click(function () {
-    resetGame()
-})
-
-// Change theme from default to dark
-var clicks = 0
-$('#darkOrLightTheme').click(function () {
-    if (clicks === 0 || clicks % 2 === 0) {
-        document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Light Theme`
-        document.body.style.background = "black"
-        document.querySelector('h1').style.color = "blue"
-        document.querySelector('#gameContainer').style.border = "5px solid darkblue"
-        document.querySelector('#gameContainer').style.background = "grey"
-        document.querySelector('.playerName').style.background = "black"
-        document.querySelector('#nameBox').style.color = "white"
-        document.querySelector('#nameBox2').style.background = "black"
-        document.querySelector('#nameBox2').style.color = "white"
-        document.querySelector('#playerOneScore').style.color = "white"
-        document.querySelector('#playerTwoScore').style.color = "white"
-        // Change back to light
-    } else {
-        document.body.style.background = "white"
-        document.querySelector('h1').style.color = "black"
-        document.querySelector('#gameContainer').style.border = "5px solid green"
-        document.querySelector('#gameContainer').style.background = "black"
-        document.querySelector('.playerName').style.background = "white"
-        document.querySelector('#nameBox').style.color = "black"
-        document.querySelector('#nameBox2').style.background = "white"
-        document.querySelector('#nameBox2').style.color = "black"
-        document.querySelector('#playerOneScore').style.color = "black"
-        document.querySelector('#playerTwoScore').style.color = "black"
-        document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
-    }
-    clicks++
-})
-
-
-// Change theme from default to ogre
-var ogreMode = false
-$('#ogreOrNormalTheme').click(function () {
-    if (clicks === 0 || clicks % 2 === 0) {
-        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
-        document.querySelector('h1').style.color = "red"
-        document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
-        document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpg')"
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
-        ogreMode = true
-        // Change back to normal
-    } else {
-        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
-        document.querySelector('h1').style.color = "black"
-        document.querySelector('#gameContainer').style.border = "5px solid green"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = ""
-        document.querySelector('.pictureBoxOne').style.backgroundSize = ""
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
-        ogreMode = false
-    }
-    clicks++
-})
-
-
-// Change theme from default to political
-var politicalMode = false
-$('#politicalOrNormalTheme').click(function () {
-    if (clicks === 0 || clicks % 2 === 0) {
-        document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
-        document.querySelector('h1').style.color = "red"
-        document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Trump.jpg')"
-        document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('KimJongUn.jpg')"
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
-        politicalMode = true
-        // Change back to normal
-    } else {
-        document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Political Theme`
-        document.querySelector('h1').style.color = "black"
-        document.querySelector('#gameContainer').style.border = "5px solid green"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = ""
-        document.querySelector('.pictureBoxOne').style.backgroundSize = ""
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
-        politicalMode = false
-    }
-    clicks++
-})
+// Prompt for player names upon load
+// $(document).ready ( function(){
+//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+//     document.querySelector("#playerOne").innerHTML = oneName
+//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+//     document.querySelector("#playerTwo").innerHTML = twoName
+//  })
 
 // Checks directions for winners and results in player who won
 var winOneCount = 0
@@ -159,13 +48,11 @@ var winCheck = function () {
     }
 }
 
-// Functions that control clicking columns
+// Functions that control clicking columns and manipulating background of circles
 var entireGame = document.querySelectorAll('.circle')
 var countTurns = 0
-
 var playOneBackground = "red"
 var playTwoBackground = "blue"
-
 function setPlayer() {
     if (countTurns % 2 === 0) {
         color = playOneBackground
@@ -175,9 +62,6 @@ function setPlayer() {
         player = 2
     }
 }
-
-
-
 function setColor(cell, currI, currJ) {
     if (entireGame[cell].style.background === "") {
         entireGame[cell].style.background = color
@@ -206,6 +90,7 @@ function setColor(cell, currI, currJ) {
     }
 }
 
+// Click functions divided by columns
 // Column one click function
 $('.0').click(function () {
     if (isEnded === false) {
@@ -291,9 +176,177 @@ $('.6').click(function () {
     }
 })
 
-
+// Check for win functions by directions
+// Function to check winner horizontally
 let scoreCount = 0
-
+function horizontalCheck(i, j, player) {
+    if (arr[i][j] === player) {
+        scoreCount += 1
+        if (arr[i][j + 1] && arr[i][j + 1] === player) {
+            scoreCount += 1
+            if (arr[i][j + 2] && arr[i][j + 2] === player) {
+                scoreCount += 1
+                if (arr[i][j + 3] && arr[i][j + 3] === player) {
+                    scoreCount += 1
+                    setTimeout(function () {
+                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                    }, 1000)
+                    setTimeout(function (){
+                        trumpWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        kimWins()
+                    }, 5000)
+                    isEnded = true
+                    if (player === 1) {
+                        winOneCount++
+                    } else {
+                        winTwoCount++
+                    }
+                    setScore(player)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+// Function to check winner vertically
+function verticalCheck(i, j, player) {
+    if (arr[i][j] === player) {
+        scoreCount += 1
+        if (arr[i - 1] && arr[i - 1][j] === player) {
+            scoreCount += 1
+            if (arr[i - 2] && arr[i - 2][j] === player) {
+                scoreCount += 1
+                if (arr[i - 3] && arr[i - 3][j] === player) {
+                    scoreCount += 1
+                    setTimeout(function () {
+                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                    }, 1000)
+                    setTimeout(function (){
+                        trumpWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        kimWins()
+                    }, 5000)
+                    isEnded = true
+                    if (player === 1) {
+                        winOneCount++
+                    } else {
+                        winTwoCount++
+                    }
+                    setScore(player)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+// Function to check winner diagonally ascending
+function diagonalCheckAscend(i, j, player) {
+    if (arr[i][j] === player) {
+        scoreCount += 1
+        if (arr[i - 1] && arr[i - 1][j + 1] && arr[i - 1][j + 1] === player) {
+            scoreCount += 1
+            if (arr[i - 2] && arr[i - 2][j + 2] && arr[i - 2][j + 2] === player) {
+                scoreCount += 1
+                if (arr[i - 3] && arr[i - 3][j + 3] && arr[i - 3][j + 3] === player) {
+                    scoreCount += 1
+                    setTimeout(function () {
+                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                    }, 1000)
+                    setTimeout(function (){
+                        trumpWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        kimWins()
+                    }, 5000)
+                    isEnded = true
+                    if (player === 1) {
+                        winOneCount++
+                    } else {
+                        winTwoCount++
+                    }
+                    setScore(player)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+// Function to check winner diagonally descending
+function diagonalCheckDescend(i, j, player) {
+    if (arr[i][j] === player) {
+        scoreCount += 1
+        if (arr[i + 1] && arr[i + 1][j + 1] && arr[i + 1][j + 1] === player) {
+            scoreCount += 1
+            if (arr[i + 2] && arr[i + 2][j + 2] && arr[i + 2][j + 2] === player) {
+                scoreCount += 1
+                if (arr[i + 3] && arr[i + 3][j + 3] && arr[i + 3][j + 3] === player) {
+                    scoreCount += 1
+                    setTimeout(function () {
+                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                    }, 1000)
+                    setTimeout(function (){
+                        trumpWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        kimWins()
+                    }, 5000)
+                    isEnded = true
+                    if (player === 1) {
+                        winOneCount++
+                    } else {
+                        winTwoCount++
+                    }
+                    setScore(player)
+                    return
+                } else {
+                    scoreCount = 0
+                }
+            } else {
+                scoreCount = 0
+            }
+        } else {
+            scoreCount = 0
+        }
+    } else {
+        scoreCount = 0
+    }
+}
+// Function to sets round scoring per player
+function setScore(player) {
+    if (player === 1) {
+        document.querySelector('#playerOneScore').innerHTML = winOneCount
+    } else {
+        document.querySelector('#playerTwoScore').innerHTML = winTwoCount
+    }
+}
+// Function to reset background of circles to beginning of game; does not reset accumulated round points
 function resetGame() {
     scoreCount = 0
     countTurns = 0
@@ -308,150 +361,117 @@ function resetGame() {
     isEnded = false
 }
 
-function setScore(player) {
-    if (player === 1) {
-        document.querySelector('#playerOneScore').innerHTML = winOneCount
+// Ternary operator to switch display of sub buttons (Spencer helped out)
+var clicked = false
+$('.mainButton').click(function () {
+    clicked = !clicked
+    return (clicked ? document.querySelector('.optionsContainer').style.display = "flex" : document.querySelector('.optionsContainer').style.display = "none")
+})
+
+// Click function that calls reset game function
+$('#resetButton').click(function () {
+    resetGame()
+})
+
+// Functions that control changing the theme of the game
+// Function that sets default style on theme removal clicks
+var clicks = 0
+function defaultStyling(){
+    document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
+    document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Political Theme`
+    document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
+    document.body.style.background = "white"
+    document.querySelector('#gameContainer').style.border = "5px solid green"
+    document.querySelector('.pictureBoxOne').style.backgroundImage = ""
+    document.querySelector('.pictureBoxOne').style.backgroundSize = ""
+    document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
+    document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
+    document.querySelector('h1').style.color = "black"
+    document.querySelector('#gameContainer').style.background = "black"
+    document.querySelector('.playerName').style.background = "white"
+    document.querySelector('#nameBox').style.color = "black"
+    document.querySelector('#nameBox2').style.background = "white"
+    document.querySelector('#nameBox2').style.color = "black"
+    document.querySelector('#playerOneScore').style.color = "black"
+    document.querySelector('#playerTwoScore').style.color = "black"
+}
+// Change theme from default to dark
+$('#darkOrLightTheme').click(function () {
+    if (clicks === 0 || clicks % 2 === 0) {
+        document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Light Theme`
+        document.body.style.background = "black"
+        document.querySelector('h1').style.color = "blue"
+        document.querySelector('#gameContainer').style.border = "5px solid darkblue"
+        document.querySelector('#gameContainer').style.background = "grey"
+        document.querySelector('.playerName').style.background = "black"
+        document.querySelector('#nameBox').style.color = "white"
+        document.querySelector('#nameBox2').style.background = "black"
+        document.querySelector('#nameBox2').style.color = "white"
+        document.querySelector('#playerOneScore').style.color = "white"
+        document.querySelector('#playerTwoScore').style.color = "white"
+        // Change back to default theme
     } else {
-        document.querySelector('#playerTwoScore').innerHTML = winTwoCount
+        defaultStyling()
+    }
+    clicks++
+})
+// Change theme from default to ogre
+var ogreMode = false
+$('#ogreOrNormalTheme').click(function () {
+    if (clicks === 0 || clicks % 2 === 0) {
+        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
+        document.querySelector('h1').style.color = "red"
+        document.querySelector('#gameContainer').style.border = "5px solid red"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
+        ogreMode = true
+        // Change back to default theme
+    } else {
+        defaultStyling()
+        ogreMode = false
+    }
+    clicks++
+})
+// Change theme from default to political
+var politicalMode = false
+$('#politicalOrNormalTheme').click(function () {
+    if (clicks === 0 || clicks % 2 === 0) {
+        document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
+        document.querySelector('h1').style.color = "red"
+        document.querySelector('#gameContainer').style.border = "5px solid red"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Trump.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('KimJongUn.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
+        politicalMode = true
+        // Change back to default theme
+    } else {
+        defaultStyling()
+        politicalMode = false
+    }
+    clicks++
+})
+
+// Function that controls outcome should Trump win in political mode
+function trumpWins() {
+    if (politicalMode && player === 1) {
+        swal({
+            title: "Trump finally got an isolated America",
+            text: "Additionally, he changed the Constitution so he's forever the president.",
+            icon: "northAmerica.jpg",
+            button: "Well... Shit."
+        })
     }
 }
-
-// Function to check winner horizontally
-function horizontalCheck(i, j, player) {
-    if (arr[i][j] === player) {
-        scoreCount += 1
-        if (arr[i][j + 1] && arr[i][j + 1] === player) {
-            scoreCount += 1
-            if (arr[i][j + 2] && arr[i][j + 2] === player) {
-                scoreCount += 1
-                if (arr[i][j + 3] && arr[i][j + 3] === player) {
-                    scoreCount += 1
-                    setTimeout(function () {
-                        alert(`Player ${player} wins!`)
-                    }, 1000)
-                    isEnded = true
-                    if (player === 1) {
-                        winOneCount++
-                    } else {
-                        winTwoCount++
-                    }
-                    setScore(player)
-                    return
-                } else {
-                    scoreCount = 0
-                }
-            } else {
-                scoreCount = 0
-            }
-        } else {
-            scoreCount = 0
-        }
-    } else {
-        scoreCount = 0
-    }
-}
-
-// Function to check winner vertically
-function verticalCheck(i, j, player) {
-    if (arr[i][j] === player) {
-        scoreCount += 1
-        if (arr[i - 1] && arr[i - 1][j] === player) {
-            scoreCount += 1
-            if (arr[i - 2] && arr[i - 2][j] === player) {
-                scoreCount += 1
-                if (arr[i - 3] && arr[i - 3][j] === player) {
-                    scoreCount += 1
-                    setTimeout(function () {
-                        alert(`Player ${player} wins!`)
-                    }, 1000)
-                    isEnded = true
-                    if (player === 1) {
-                        winOneCount++
-                    } else {
-                        winTwoCount++
-                    }
-                    setScore(player)
-                    return
-                } else {
-                    scoreCount = 0
-                }
-            } else {
-                scoreCount = 0
-            }
-        } else {
-            scoreCount = 0
-        }
-    } else {
-        scoreCount = 0
-    }
-}
-
-// Function to check winner diagonally ascending
-function diagonalCheckAscend(i, j, player) {
-    if (arr[i][j] === player) {
-        scoreCount += 1
-        if (arr[i - 1] && arr[i - 1][j + 1] && arr[i - 1][j + 1] === player) {
-            scoreCount += 1
-            if (arr[i - 2] && arr[i - 2][j + 2] && arr[i - 2][j + 2] === player) {
-                scoreCount += 1
-                if (arr[i - 3] && arr[i - 3][j + 3] && arr[i - 3][j + 3] === player) {
-                    scoreCount += 1
-                    setTimeout(function () {
-                        alert(`Player ${player} wins!`)
-                    }, 1000)
-                    isEnded = true
-                    if (player === 1) {
-                        winOneCount++
-                    } else {
-                        winTwoCount++
-                    }
-                    setScore(player)
-                    return
-                } else {
-                    scoreCount = 0
-                }
-            } else {
-                scoreCount = 0
-            }
-        } else {
-            scoreCount = 0
-        }
-    } else {
-        scoreCount = 0
-    }
-}
-
-// Function to check winner diagonally descending
-function diagonalCheckDescend(i, j, player) {
-    if (arr[i][j] === player) {
-        scoreCount += 1
-        if (arr[i + 1] && arr[i + 1][j + 1] && arr[i + 1][j + 1] === player) {
-            scoreCount += 1
-            if (arr[i + 2] && arr[i + 2][j + 2] && arr[i + 2][j + 2] === player) {
-                scoreCount += 1
-                if (arr[i + 3] && arr[i + 3][j + 3] && arr[i + 3][j + 3] === player) {
-                    scoreCount += 1
-                    setTimeout(function () {
-                        alert(`Player ${player} wins!`)
-                    }, 1000)
-                    isEnded = true
-                    if (player === 1) {
-                        winOneCount++
-                    } else {
-                        winTwoCount++
-                    }
-                    setScore(player)
-                    return
-                } else {
-                    scoreCount = 0
-                }
-            } else {
-                scoreCount = 0
-            }
-        } else {
-            scoreCount = 0
-        }
-    } else {
-        scoreCount = 0
+// Function that controls outcome should Kim win in political mode
+function kimWins() {
+    if (politicalMode && player === 2) {
+        swal({
+            title: "...Kim finally got what he wanted!",
+            icon: "bomb.gif",
+            button: "Well... Shit."
+        })
     }
 }
