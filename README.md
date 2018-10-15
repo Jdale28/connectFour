@@ -3,6 +3,8 @@
 _Description:_
 Two player game where players take turns selecting a column to place a game disc. If either player manages to connect four discs horizontally, vertically, or diagonally, the player wins.
 
+**Utilizing HTML, CSS, JavaScript, JQuery, SweetAlerts library, Animate.css library**
+
 _Additional theme include:_
 
 1. Dark and Light coloration theme
