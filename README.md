@@ -28,3 +28,4 @@ _Link to gitHub repo:_
 1. Three player theme
 2. Defensive AI
 3. Drop animations and cursor changed to current game disc
+4. Sound Effects
