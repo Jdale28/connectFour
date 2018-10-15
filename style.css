@@ -106,7 +106,7 @@ h1 {
     margin: 0px;
 }
 
-.pictureBox {
+.pictureBoxOne, .pictureBoxTwo {
     border: 2px solid black;
     width: 290px;
     margin: 0 5px;

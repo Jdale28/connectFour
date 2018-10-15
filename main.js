@@ -68,6 +68,8 @@ $('#darkOrLightTheme').click(function () {
         document.querySelector('#nameBox').style.color = "white"
         document.querySelector('#nameBox2').style.background = "black"
         document.querySelector('#nameBox2').style.color = "white"
+        document.querySelector('#playerOneScore').style.color = "white"
+        document.querySelector('#playerTwoScore').style.color = "white"
         // Change back to light
     } else {
         document.body.style.background = "white"
@@ -78,6 +80,8 @@ $('#darkOrLightTheme').click(function () {
         document.querySelector('#nameBox').style.color = "black"
         document.querySelector('#nameBox2').style.background = "white"
         document.querySelector('#nameBox2').style.color = "black"
+        document.querySelector('#playerOneScore').style.color = "black"
+        document.querySelector('#playerTwoScore').style.color = "black"
         document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
     }
     clicks++
@@ -89,28 +93,46 @@ var ogreMode = false
 $('#ogreOrNormalTheme').click(function () {
     if (clicks === 0 || clicks % 2 === 0) {
         document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
-        document.body.style.background = "black"
-        document.querySelector('h1').style.color = "blue"
-        document.querySelector('#gameContainer').style.border = "5px solid darkblue"
-        document.querySelector('#gameContainer').style.background = "grey"
-        document.querySelector('.playerName').style.background = "black"
-        document.querySelector('#nameBox').style.color = "white"
-        document.querySelector('#nameBox2').style.background = "black"
-        document.querySelector('#nameBox2').style.color = "white"
+        document.querySelector('h1').style.color = "red"
+        document.querySelector('#gameContainer').style.border = "5px solid red"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpeg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
         ogreMode = true
-        // playOneBackground = 
-        // playTwoBackground = "green"
         // Change back to normal
     } else {
-        document.body.style.background = "white"
+        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
         document.querySelector('h1').style.color = "black"
         document.querySelector('#gameContainer').style.border = "5px solid green"
-        document.querySelector('#gameContainer').style.background = "black"
-        document.querySelector('.playerName').style.background = "white"
-        document.querySelector('#nameBox').style.color = "black"
-        document.querySelector('#nameBox2').style.background = "white"
-        document.querySelector('#nameBox2').style.color = "black"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = ""
+        document.querySelector('.pictureBoxOne').style.backgroundSize = ""
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
+        ogreMode = false
+    }
+    clicks++
+})
+
+$('#politicalTheme').click(function () {
+    if (clicks === 0 || clicks % 2 === 0) {
+        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
+        document.querySelector('h1').style.color = "red"
+        document.querySelector('#gameContainer').style.border = "5px solid red"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpeg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
+        ogreMode = true
+        // Change back to normal
+    } else {
         document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
+        document.querySelector('h1').style.color = "black"
+        document.querySelector('#gameContainer').style.border = "5px solid green"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = ""
+        document.querySelector('.pictureBoxOne').style.backgroundSize = ""
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
         ogreMode = false
     }
     clicks++
