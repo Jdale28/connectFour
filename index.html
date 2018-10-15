@@ -19,7 +19,10 @@
 <body>
 
     <h1 class="animated pulse slower">Jordan's Connect Four</h1>
+
+    <!-- Flex Box + Grid that holds panels and gameboard -->
     <div class="mainContainer">
+        <!-- Left side panel -->
         <div class="sidePanel">
             <div class="playerName" id="nameBox">
                 <p id="playerOne">Player One's Name</p>
@@ -30,14 +33,14 @@
             <div class="pictureBoxOne">
                 <div id="pictureThemeOne">
                 </div>
-
             </div>
-
         </div>
 
+        <!-- Shell for gameboard -->
         <div id="gameContainer">
         </div>
 
+        <!-- Right side panel -->
         <div class="sidePanel">
             <div class="playerName" id="nameBox2">
                 <p id="playerTwo">Player Two's Name</p>
@@ -50,13 +53,9 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 
-
+    <!-- Options bars -->
     <div class="navBar">
         <button class="mainButton">Options Menu</button>
         <div class="optionsContainer animated fadeIn delay-3s">

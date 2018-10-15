@@ -23,12 +23,12 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // Prompt for player names upon load
-// $(document).ready ( function(){
-//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-//     document.querySelector("#playerOne").innerHTML = oneName
-//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-//     document.querySelector("#playerTwo").innerHTML = twoName
-//  })
+$(document).ready ( function(){
+    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+    document.querySelector("#playerOne").innerHTML = oneName
+    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+    document.querySelector("#playerTwo").innerHTML = twoName
+ })
 
 // Checks directions for winners and results in player who won
 var winOneCount = 0
@@ -53,6 +53,7 @@ var entireGame = document.querySelectorAll('.circle')
 var countTurns = 0
 var playOneBackground = "red"
 var playTwoBackground = "blue"
+
 function setPlayer() {
     if (countTurns % 2 === 0) {
         color = playOneBackground
@@ -62,25 +63,26 @@ function setPlayer() {
         player = 2
     }
 }
+
 function setColor(cell, currI, currJ) {
     if (entireGame[cell].style.background === "") {
         entireGame[cell].style.background = color
         if (ogreMode) {
             if (player === 1) {
-                entireGame[cell].style.backgroundImage = "url('GnomeMale.jpg')"
+                entireGame[cell].style.backgroundImage = "url('images/GnomeMale.jpg')"
                 entireGame[cell].style.backgroundSize = "60px"
             } else {
-                entireGame[cell].style.backgroundImage = "url('GnomeFemale.jpg')"
+                entireGame[cell].style.backgroundImage = "url('images/GnomeFemale.jpg')"
                 entireGame[cell].style.backgroundSize = "55px"
                 entireGame[cell].style.backgroundPosition = "center"
             }
         }
         if (politicalMode) {
             if (player === 1) {
-                entireGame[cell].style.backgroundImage = "url('AmericanFlag.png')"
+                entireGame[cell].style.backgroundImage = "url('images/AmericanFlag.png')"
                 entireGame[cell].style.backgroundSize = "100px"
             } else {
-                entireGame[cell].style.backgroundImage = "url('KoreanFlag.png')"
+                entireGame[cell].style.backgroundImage = "url('images/KoreanFlag.png')"
                 entireGame[cell].style.backgroundSize = "100px"
             }
         }
@@ -180,6 +182,7 @@ $('.6').click(function () {
 // Check for win functions by directions
 // Function to check winner horizontally
 let scoreCount = 0
+
 function horizontalCheck(i, j, player) {
     if (arr[i][j] === player) {
         scoreCount += 1
@@ -192,13 +195,13 @@ function horizontalCheck(i, j, player) {
                     setTimeout(function () {
                         swal("Congrats!", `Player ${player} wins!`, `success`)
                     }, 1000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         trumpWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         kimWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         ogreTrollWin()
                     }, 5000)
                     isEnded = true
@@ -235,13 +238,13 @@ function verticalCheck(i, j, player) {
                     setTimeout(function () {
                         swal("Congrats!", `Player ${player} wins!`, `success`)
                     }, 1000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         trumpWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         kimWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         ogreTrollWin()
                     }, 5000)
                     isEnded = true
@@ -278,13 +281,13 @@ function diagonalCheckAscend(i, j, player) {
                     setTimeout(function () {
                         swal("Congrats!", `Player ${player} wins!`, `success`)
                     }, 1000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         trumpWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         kimWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         ogreTrollWin()
                     }, 5000)
                     isEnded = true
@@ -321,13 +324,13 @@ function diagonalCheckDescend(i, j, player) {
                     setTimeout(function () {
                         swal("Congrats!", `Player ${player} wins!`, `success`)
                     }, 1000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         trumpWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         kimWins()
                     }, 5000)
-                    setTimeout(function (){
+                    setTimeout(function () {
                         ogreTrollWin()
                     }, 5000)
                     isEnded = true
@@ -389,7 +392,8 @@ $('#resetButton').click(function () {
 // Functions that control changing the theme of the game
 // Function that sets default style on theme removal clicks
 var clicks = 0
-function defaultStyling(){
+
+function defaultStyling() {
     document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
     document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Political Theme`
     document.querySelector(".optionsContainer > #darkOrLightTheme").innerHTML = `Dark Theme`
@@ -439,11 +443,11 @@ $('#ogreOrNormalTheme').click(function () {
         document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
         document.querySelector('h1').style.color = "red"
         document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/Ogre1.jpg')"
         document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/Troll1.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
-        document.querySelector('#gameContainer').style.backgroundImage = "url(cauldron.jpg)"
+        document.querySelector('#gameContainer').style.backgroundImage = "url(images/cauldron.jpg)"
         document.querySelector('#gameContainer').style.backgroundSize = "770px"
         document.querySelector('#gameContainer').style.backgroundPosition = "center"
         document.querySelector('#gameContainer').style.padding = "60px"
@@ -462,9 +466,9 @@ $('#politicalOrNormalTheme').click(function () {
         document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
         document.querySelector('h1').style.color = "red"
         document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Trump.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/Trump.jpg')"
         document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('KimJongUn.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/KimJongUn.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
         politicalMode = true
         // Change back to default theme
@@ -481,7 +485,7 @@ function trumpWins() {
         swal({
             title: "Trump finally got an isolated America",
             text: "Additionally, he changed the Constitution so he's forever the president.",
-            icon: "northAmerica.jpg",
+            icon: "images/northAmerica.jpg",
             button: "Well... Shit."
         })
     }
@@ -491,18 +495,18 @@ function kimWins() {
     if (politicalMode && player === 2) {
         swal({
             title: "...Kim finally got what he wanted!",
-            icon: "bomb.gif",
+            icon: "images/bomb.gif",
             button: "Well... Shit."
         })
     }
 }
-
+// Function that controls outcome for Ogre mode
 function ogreTrollWin() {
-    if (ogreMode && player === 2 || player === 1){
+    if (ogreMode && player === 2 || player === 1) {
         swal({
             title: "Doesn't matter Ogre or Troll",
             text: "Hobbit's for dinner",
-            icon: "HobbitTrolls.gif",
+            icon: "images/HobbitTrolls.gif",
             button: "Sorry, Bilbo."
         })
     }

@@ -3,15 +3,16 @@ h1 {
     margin: 40px 0 0 0;
 }
 
+/* Flex box containing side panels and gameboard */
 .mainContainer {
     justify-content: center;
     display: flex;
     margin: 75px 0 75px 0;
     height: 450px;
     width: auto;
-    z-index: -1;
 }
 
+/* Gameboard default styling */
 #gameContainer {
     width: 600px;    
     display: grid;
@@ -22,6 +23,7 @@ h1 {
     border: 5px solid green;
 }
 
+/* Divs that are created with gameboard function */
 .circle {
     display: flex;
     background-color: white;
@@ -83,14 +85,6 @@ h1 {
     padding: 10px;
 }
 
-.playerOneOgre {
-    background-image: url("GnomeFemale.jpg")
-}
-
-.playerTwoOgre {
-    background-image: url("GnomeMale.jpg")
-}
-
 .scoreBox {
     display: inline-flex;
     justify-content: center;
@@ -107,7 +101,6 @@ h1 {
 }
 
 .pictureBoxOne, .pictureBoxTwo {
-    /* border: 2px solid black; */
     width: 290px;
     margin: 0 5px;
     height: 380px;
