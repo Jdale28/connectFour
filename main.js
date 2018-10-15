@@ -23,12 +23,12 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // Prompt for player names upon load
-$(document).ready ( function(){
+$(document).ready(function () {
     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
     document.querySelector("#playerOne").innerHTML = oneName
     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
     document.querySelector("#playerTwo").innerHTML = twoName
- })
+})
 
 // Checks directions for winners and results in player who won
 var winOneCount = 0
@@ -195,7 +195,7 @@ function horizontalCheck(i, j, player) {
                     setTimeout(function () {
                         if (player === 1) {
                             playName = playerOne.innerHTML
-                        } else if (player === 2){
+                        } else if (player === 2) {
                             playName = playerTwo.innerHTML
                         }
                         swal("Congratulations!", `${playName} wins!`, `success`)
@@ -243,7 +243,7 @@ function verticalCheck(i, j, player) {
                     setTimeout(function () {
                         if (player === 1) {
                             playName = playerOne.innerHTML
-                        } else if (player === 2){
+                        } else if (player === 2) {
                             playName = playerTwo.innerHTML
                         }
                         swal("Congratulations!", `${playName} wins!`, `success`)
@@ -291,7 +291,7 @@ function diagonalCheckAscend(i, j, player) {
                     setTimeout(function () {
                         if (player === 1) {
                             playName = playerOne.innerHTML
-                        } else if (player === 2){
+                        } else if (player === 2) {
                             playName = playerTwo.innerHTML
                         }
                         swal("Congratulations!", `${player} wins!`, `success`)
@@ -339,7 +339,7 @@ function diagonalCheckDescend(i, j, player) {
                     setTimeout(function () {
                         if (player === 1) {
                             playName = playerOne.innerHTML
-                        } else if (player === 2){
+                        } else if (player === 2) {
                             playName = playerTwo.innerHTML
                         }
                         swal("Congratulations!", `${player} wins!`, `success`)

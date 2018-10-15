@@ -14,7 +14,7 @@ h1 {
 
 /* Gameboard default styling */
 #gameContainer {
-    width: 600px;    
+    width: 600px;
     display: grid;
     justify-content: center;
     background-color: black;
@@ -96,11 +96,13 @@ h1 {
     font-size: 25px;
 }
 
-#playerOneScore, #playerTwoScore {
+#playerOneScore,
+#playerTwoScore {
     margin: 0px;
 }
 
-.pictureBoxOne, .pictureBoxTwo {
+.pictureBoxOne,
+.pictureBoxTwo {
     width: 290px;
     margin: 0 5px;
     height: 380px;
