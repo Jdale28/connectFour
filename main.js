@@ -202,13 +202,13 @@ function horizontalCheck(i, j, player) {
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         kimWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         ogreTrollWin()
-                    }, 5000)
+                    }, 3000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
@@ -250,13 +250,13 @@ function verticalCheck(i, j, player) {
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         kimWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         ogreTrollWin()
-                    }, 5000)
+                    }, 3000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
@@ -298,13 +298,13 @@ function diagonalCheckAscend(i, j, player) {
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         kimWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         ogreTrollWin()
-                    }, 5000)
+                    }, 3000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
@@ -346,13 +346,13 @@ function diagonalCheckDescend(i, j, player) {
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         kimWins()
-                    }, 5000)
+                    }, 3000)
                     setTimeout(function () {
                         ogreTrollWin()
-                    }, 5000)
+                    }, 3000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
