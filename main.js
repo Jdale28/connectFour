@@ -193,7 +193,12 @@ function horizontalCheck(i, j, player) {
                 if (arr[i][j + 3] && arr[i][j + 3] === player) {
                     scoreCount += 1
                     setTimeout(function () {
-                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                        if (player === 1) {
+                            playName = playerOne.innerHTML
+                        } else if (player === 2){
+                            playName = playerTwo.innerHTML
+                        }
+                        swal("Congratulations!", `${playName} wins!`, `success`)
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
@@ -236,7 +241,12 @@ function verticalCheck(i, j, player) {
                 if (arr[i - 3] && arr[i - 3][j] === player) {
                     scoreCount += 1
                     setTimeout(function () {
-                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                        if (player === 1) {
+                            playName = playerOne.innerHTML
+                        } else if (player === 2){
+                            playName = playerTwo.innerHTML
+                        }
+                        swal("Congratulations!", `${playName} wins!`, `success`)
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
@@ -279,7 +289,12 @@ function diagonalCheckAscend(i, j, player) {
                 if (arr[i - 3] && arr[i - 3][j + 3] && arr[i - 3][j + 3] === player) {
                     scoreCount += 1
                     setTimeout(function () {
-                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                        if (player === 1) {
+                            playName = playerOne.innerHTML
+                        } else if (player === 2){
+                            playName = playerTwo.innerHTML
+                        }
+                        swal("Congratulations!", `${player} wins!`, `success`)
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
@@ -322,7 +337,12 @@ function diagonalCheckDescend(i, j, player) {
                 if (arr[i + 3] && arr[i + 3][j + 3] && arr[i + 3][j + 3] === player) {
                     scoreCount += 1
                     setTimeout(function () {
-                        swal("Congrats!", `Player ${player} wins!`, `success`)
+                        if (player === 1) {
+                            playName = playerOne.innerHTML
+                        } else if (player === 2){
+                            playName = playerTwo.innerHTML
+                        }
+                        swal("Congratulations!", `${player} wins!`, `success`)
                     }, 1000)
                     setTimeout(function () {
                         trumpWins()
@@ -483,8 +503,8 @@ $('#politicalOrNormalTheme').click(function () {
 function trumpWins() {
     if (politicalMode && player === 1) {
         swal({
-            title: "Trump finally got an isolated America",
-            text: "Additionally, he changed the Constitution so he's forever the president.",
+            title: "Trump finally made America an island",
+            text: "He also changed the Constitution so he's president forever",
             icon: "images/northAmerica.jpg",
             button: "Well... Shit."
         })
@@ -502,7 +522,7 @@ function kimWins() {
 }
 // Function that controls outcome for Ogre mode
 function ogreTrollWin() {
-    if (ogreMode && player === 2 || player === 1) {
+    if ((ogreMode && player === 2) || (ogreMode && player === 1)) {
         swal({
             title: "Doesn't matter Ogre or Troll",
             text: "Hobbit's for dinner",
