@@ -22,6 +22,6 @@ Two player game where players take turns selecting a column to place a game disc
 
 *Wish List* 
 **_work in progress_ for second version or iteration of the game:**
-. .*Three player theme
-. .*Defensive AI
-. .*Drop animations and cursor changed to current game disc
+⋅⋅*Three player theme
+⋅⋅*Defensive AI
+⋅⋅*Drop animations and cursor changed to current game disc
