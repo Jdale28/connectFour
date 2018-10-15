@@ -71,7 +71,8 @@ function setColor(cell, currI, currJ) {
                 entireGame[cell].style.backgroundSize = "60px"
             } else {
                 entireGame[cell].style.backgroundImage = "url('GnomeFemale.jpg')"
-                entireGame[cell].style.backgroundSize = "60px"
+                entireGame[cell].style.backgroundSize = "55px"
+                entireGame[cell].style.backgroundPosition = "center"
             }
         }
         if (politicalMode) {
@@ -394,6 +395,10 @@ function defaultStyling(){
     document.querySelector('#nameBox2').style.color = "black"
     document.querySelector('#playerOneScore').style.color = "black"
     document.querySelector('#playerTwoScore').style.color = "black"
+    document.querySelector('#gameContainer').style.backgroundImage = ""
+    document.querySelector('#gameContainer').style.backgroundSize = ""
+    document.querySelector('#gameContainer').style.backgroundPosition = ""
+    document.querySelector('#gameContainer').style.padding = ""
 }
 // Change theme from default to dark
 $('#darkOrLightTheme').click(function () {
@@ -426,6 +431,10 @@ $('#ogreOrNormalTheme').click(function () {
         document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
         document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
+        document.querySelector('#gameContainer').style.backgroundImage = "url(cauldron.jpg)"
+        document.querySelector('#gameContainer').style.backgroundSize = "770px"
+        document.querySelector('#gameContainer').style.backgroundPosition = "center"
+        document.querySelector('#gameContainer').style.padding = "60px"
         ogreMode = true
         // Change back to default theme
     } else {
