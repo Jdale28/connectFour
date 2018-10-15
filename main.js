@@ -198,6 +198,9 @@ function horizontalCheck(i, j, player) {
                     setTimeout(function (){
                         kimWins()
                     }, 5000)
+                    setTimeout(function (){
+                        ogreTrollWin()
+                    }, 5000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
@@ -237,6 +240,9 @@ function verticalCheck(i, j, player) {
                     }, 5000)
                     setTimeout(function (){
                         kimWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        ogreTrollWin()
                     }, 5000)
                     isEnded = true
                     if (player === 1) {
@@ -278,6 +284,9 @@ function diagonalCheckAscend(i, j, player) {
                     setTimeout(function (){
                         kimWins()
                     }, 5000)
+                    setTimeout(function (){
+                        ogreTrollWin()
+                    }, 5000)
                     isEnded = true
                     if (player === 1) {
                         winOneCount++
@@ -317,6 +326,9 @@ function diagonalCheckDescend(i, j, player) {
                     }, 5000)
                     setTimeout(function (){
                         kimWins()
+                    }, 5000)
+                    setTimeout(function (){
+                        ogreTrollWin()
                     }, 5000)
                     isEnded = true
                     if (player === 1) {
@@ -481,6 +493,17 @@ function kimWins() {
             title: "...Kim finally got what he wanted!",
             icon: "bomb.gif",
             button: "Well... Shit."
+        })
+    }
+}
+
+function ogreTrollWin() {
+    if (ogreMode && player === 2 || player === 1){
+        swal({
+            title: "Doesn't matter Ogre or Troll",
+            text: "Hobbit's for dinner",
+            icon: "HobbitTrolls.gif",
+            button: "Sorry, Bilbo."
         })
     }
 }

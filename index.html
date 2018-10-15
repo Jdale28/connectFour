@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous" defer></script>
@@ -16,7 +18,7 @@
 
 <body>
 
-    <h1>Jordan's Connect Four</h1>
+    <h1 class="animated pulse slower">Jordan's Connect Four</h1>
     <div class="mainContainer">
         <div class="sidePanel">
             <div class="playerName" id="nameBox">
@@ -57,7 +59,7 @@
 
     <div class="navBar">
         <button class="mainButton">Options Menu</button>
-        <div class="optionsContainer">
+        <div class="optionsContainer animated fadeIn delay-3s">
             <h3 class="subButton" id="resetButton">Reset Game</h3>
             <h3 class="subButton" id="darkOrLightTheme">Dark Theme</h3>
             <h3 class="subButton" id="ogreOrNormalTheme">Ogre Theme</h3>
