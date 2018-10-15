@@ -23,13 +23,13 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
-// // Prompt for names upon load
-// $(document).ready ( function(){
-//     var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
-//     document.querySelector("#playerOne").innerHTML = oneName
-//     var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
-//     document.querySelector("#playerTwo").innerHTML = twoName
-//  })
+// Prompt for names upon load
+$(document).ready ( function(){
+    var oneName = window.prompt("Player One, what's your name?", "Enter it here!")
+    document.querySelector("#playerOne").innerHTML = oneName
+    var twoName = window.prompt("Player Two, what's your name?", "Enter it here!")
+    document.querySelector("#playerTwo").innerHTML = twoName
+ })
 
 
 var buttons = document.querySelectorAll('h3')
@@ -87,9 +87,9 @@ $('#darkOrLightTheme').click(function () {
     clicks++
 })
 
-var ogreMode = false
 
-// Change theme from default to ogre - WIP
+// Change theme from default to ogre
+var ogreMode = false
 $('#ogreOrNormalTheme').click(function () {
     if (clicks === 0 || clicks % 2 === 0) {
         document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
@@ -97,7 +97,7 @@ $('#ogreOrNormalTheme').click(function () {
         document.querySelector('#gameContainer').style.border = "5px solid red"
         document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
         document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpeg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
         ogreMode = true
         // Change back to normal
@@ -114,26 +114,29 @@ $('#ogreOrNormalTheme').click(function () {
     clicks++
 })
 
-$('#politicalTheme').click(function () {
+
+// Change theme from default to political
+var politicalMode = false
+$('#politicalOrNormalTheme').click(function () {
     if (clicks === 0 || clicks % 2 === 0) {
-        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Normal Theme`
+        document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
         document.querySelector('h1').style.color = "red"
         document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Ogre1.jpg')"
-        document.querySelector('.pictureBoxOne').style.backgroundSize = "300px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('Troll1.jpeg')"
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = "300px"
-        ogreMode = true
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('Trump.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('KimJongUn.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
+        politicalMode = true
         // Change back to normal
     } else {
-        document.querySelector(".optionsContainer > #ogreOrNormalTheme").innerHTML = `Ogre Theme`
+        document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Political Theme`
         document.querySelector('h1').style.color = "black"
         document.querySelector('#gameContainer').style.border = "5px solid green"
         document.querySelector('.pictureBoxOne').style.backgroundImage = ""
         document.querySelector('.pictureBoxOne').style.backgroundSize = ""
         document.querySelector('.pictureBoxTwo').style.backgroundImage = ""
         document.querySelector('.pictureBoxTwo').style.backgroundSize = ""
-        ogreMode = false
+        politicalMode = false
     }
     clicks++
 })
@@ -185,6 +188,15 @@ function setColor(cell, currI, currJ) {
             } else {
                 entireGame[cell].style.backgroundImage = "url('GnomeFemale.jpg')"
                 entireGame[cell].style.backgroundSize = "60px"
+            }
+        }
+        if (politicalMode) {
+            if (player === 1) {
+                entireGame[cell].style.backgroundImage = "url('AmericanFlag.png')"
+                entireGame[cell].style.backgroundSize = "100px"
+            } else {
+                entireGame[cell].style.backgroundImage = "url('KoreanFlag.png')"
+                entireGame[cell].style.backgroundSize = "100px"
             }
         }
         countTurns++
