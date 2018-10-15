@@ -21,7 +21,7 @@ Two player game where players take turns selecting a column to place a game disc
 *Link to gitHub repo:*
 [GitHub Repository](https://github.com/Jdale28/connectFour)
 
-**Wish List: _work in progress_ for second version or iteration of the game:**
+**Wish List: _works in progress_ for second version or iteration of the game:**
 1. Three player theme
 2. Defensive AI
 3. Drop animations and cursor changed to current game disc
