@@ -1,7 +1,7 @@
 # Jordan Dale's Project One: Connect Four
 
 *Description:*
-Two player game where players take turns selecting a column to place a game disc. If either player manages to connect four discs horizontally, vertically, or diagonally the player wins.
+Two player game where players take turns selecting a column to place a game disc. If either player manages to connect four discs horizontally, vertically, or diagonally, the player wins.
 
 
 *Additional theme include:*
