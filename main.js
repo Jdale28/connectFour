@@ -497,9 +497,13 @@ $('#politicalOrNormalTheme').click(function () {
         document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
         document.querySelector('h1').style.color = "red"
         document.querySelector('#gameContainer').style.border = "5px solid red"
+        // Political theme parody (Kim vs. Trump)
         // document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/Trump.jpg')"
+        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/elephant-portrait.jpg')"
         document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
+        // Political theme parody (Kim vs. Trump)
         // document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/KimJongUn.jpg')"
+        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/donkey-portrait.png')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
         politicalMode = true
         // Change back to default theme
