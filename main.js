@@ -504,7 +504,7 @@ $('#politicalOrNormalTheme').click(function () {
         // Political theme parody (Kim vs. Trump)
         // document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/KimJongUn.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/donkey-portrait.png')"
-        document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
+        document.querySelector('.pictureBoxTwo').style.backgroundSize = "290px"
         politicalMode = true
         // Change back to default theme
     } else {
