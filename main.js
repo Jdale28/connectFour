@@ -87,6 +87,15 @@ function setColor(cell, currI, currJ) {
         //         entireGame[cell].style.backgroundSize = "100px"
         //     }
         // }
+        if (politicalMode) {
+            if (player === 1) {
+                entireGame[cell].style.backgroundImage = "url('images/repElephant.jpg')"
+                entireGame[cell].style.backgroundSize = "70px"
+            } else {
+                entireGame[cell].style.backgroundImage = "url('images/demDonkey.jpg')"
+                entireGame[cell].style.backgroundSize = "60px"
+            }
+        }
         countTurns++
         arr[currI][currJ] = player
         winCheck()
@@ -503,22 +512,38 @@ $('#politicalOrNormalTheme').click(function () {
 
 // Function that controls outcome should Trump win in political mode
 function trumpWins() {
+    // Political Parody Kim vs. Trump
+    // if (politicalMode && player === 1) {
+    //     swal({
+    //         title: `Trump made 'Murica "Great Again"`,
+    //         text: "He also changed the Constitution so he's president forever",
+    //         icon: "images/northAmerica.jpg",
+    //         button: "Well... Shit."
+    //     })
+    // }
     if (politicalMode && player === 1) {
         swal({
-            title: `Trump made 'Murica "Great Again"`,
-            text: "He also changed the Constitution so he's president forever",
-            icon: "images/northAmerica.jpg",
-            button: "Well... Shit."
+            title: `Republicans Win!`,
+            icon: "images/elephant-giphy.gif",
+            button: "That's one happy elephant."
         })
     }
 }
 // Function that controls outcome should Kim win in political mode
 function kimWins() {
+    // Political parody Kim vs. Trump
+    // if (politicalMode && player === 2) {
+    //     swal({
+    //         title: "...Kim finally got what he wanted!",
+    //         icon: "images/bomb.gif",
+    //         button: "Well... Shit."
+    //     })
+    // }
     if (politicalMode && player === 2) {
         swal({
-            title: "...Kim finally got what he wanted!",
-            icon: "images/bomb.gif",
-            button: "Well... Shit."
+            title: "Democrats Win!",
+            icon: "images/donkey-gif-6.gif",
+            button: "Celebrate with parfait!"
         })
     }
 }
