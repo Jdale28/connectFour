@@ -497,9 +497,9 @@ $('#politicalOrNormalTheme').click(function () {
         document.querySelector(".optionsContainer > #politicalOrNormalTheme").innerHTML = `Normal Theme`
         document.querySelector('h1').style.color = "red"
         document.querySelector('#gameContainer').style.border = "5px solid red"
-        document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/Trump.jpg')"
+        // document.querySelector('.pictureBoxOne').style.backgroundImage = "url('images/Trump.jpg')"
         document.querySelector('.pictureBoxOne').style.backgroundSize = "360px"
-        document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/KimJongUn.jpg')"
+        // document.querySelector('.pictureBoxTwo').style.backgroundImage = "url('images/KimJongUn.jpg')"
         document.querySelector('.pictureBoxTwo').style.backgroundSize = "310px"
         politicalMode = true
         // Change back to default theme
