@@ -77,15 +77,16 @@ function setColor(cell, currI, currJ) {
                 entireGame[cell].style.backgroundPosition = "center"
             }
         }
-        if (politicalMode) {
-            if (player === 1) {
-                entireGame[cell].style.backgroundImage = "url('images/AmericanFlag.png')"
-                entireGame[cell].style.backgroundSize = "100px"
-            } else {
-                entireGame[cell].style.backgroundImage = "url('images/KoreanFlag.png')"
-                entireGame[cell].style.backgroundSize = "100px"
-            }
-        }
+        // Turn political mode on (parody - Trump vs. Kim Jong Un)
+        // if (politicalMode) {
+        //     if (player === 1) {
+        //         entireGame[cell].style.backgroundImage = "url('images/AmericanFlag.png')"
+        //         entireGame[cell].style.backgroundSize = "100px"
+        //     } else {
+        //         entireGame[cell].style.backgroundImage = "url('images/KoreanFlag.png')"
+        //         entireGame[cell].style.backgroundSize = "100px"
+        //     }
+        // }
         countTurns++
         arr[currI][currJ] = player
         winCheck()
@@ -397,6 +398,7 @@ function resetGame() {
     isEnded = false
 }
 
+// Code that controls various available themes
 // Ternary operator to switch display of sub buttons (Spencer helped out)
 var clicked = false
 $('.mainButton').click(function () {
